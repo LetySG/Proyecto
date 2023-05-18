@@ -38,8 +38,9 @@ router.get('/login',(req,res)=>{
 });
 
 //vista formulario subir imagen
-router.get('/upload',(req,res)=>{
-    res.render('upload');
+router.get('/upload',async (req,res)=>{
+    const image = await Image.find().lean();
+    res.render('upload',{image});
 
     
 });
