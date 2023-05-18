@@ -1,16 +1,14 @@
 <h1>Archivos </h1>
 <style>
-  .swiper-container {
+  .swiper {
   width: 600px;
   height: 300px;
-  }
+}
 </style>
-<!-- Slider main container -->
-<div class="swiper-container">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
 
-    {{#each image}}
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  {{#each image}}
 
     <img src="{{imageURL}}" alt="" class="swiper-slide">
 
