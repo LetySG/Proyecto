@@ -27,14 +27,13 @@ router.get('/files', async(req,res)=>{
     res.render('files',{image});
 })
 
-//Vista de registro
-router.get('/signIn',(req,res)=>{
-    res.render('signIn')
+//Vista de Inicio de Sesion
+router.get('/iniciarSesion',(req,res)=>{
+    res.render('iniciarSesion')
 })
-
-//vista inicio de sesion
-router.get('/login',(req,res)=>{
-    res.render('login')
+//vista Registro
+router.get('/registro',(req,res)=>{
+    res.render('registro')
 });
 
 //vista formulario subir imagen
@@ -69,7 +68,7 @@ res.redirect('upload');
 router.post('/tasks/add',async(req,res)=>{
    const task = Task(req.body)
    await task.save();
-   res.redirect('/signIn')
+   res.redirect('/iniciarSesion')
 });
 
 
