@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import  Task from '../models/Task';
 import Image from '../models/Image';
+import RegistroO from '../models/RegistroO';
 const router=Router();
 const cloudinary = require('cloudinary');
 //SERVER CONFIG 'CLOUDINARY'
@@ -13,28 +14,31 @@ cloudinary.config({
 const fs = require("fs-extra");
 
 
-//RUTAS GET
+//**Rustas Get */
+//Vista Registro-Alumno
 
+//Registro Orientador
+router.get('/registro-orientador',(req,res)=>{
+    res.render('RegistroO')
+});
+//Vista de Inicio de Sesion
+router.get('/task',(req,res)=>{
+    res.render('Task')
+})
 //Vista de Principal-Información
 router.get('/', (req,res)=>{
     res.render('index');
 })
-
 //Vista para mostrar los archivos
 router.get('/files', async(req,res)=>{
    const image= await Image.find().lean();
    console.log(image);
     res.render('files',{image});
 })
-
 //Vista de Inicio de Sesion
 router.get('/iniciarSesion',(req,res)=>{
     res.render('iniciarSesion')
 })
-//vista Registro
-router.get('/registro',(req,res)=>{
-    res.render('registro')
-});
 
 //vista formulario subir imagen
 router.get('/upload',async (req,res)=>{
@@ -59,18 +63,23 @@ const newImage= new Image({
     description,
     imageURL:result.url,
     public_id:result.url
-});
+});S
 await newImage.save();
 await fs.unlink(req.file.path);
 res.redirect('upload');
 });
 
-router.post('/tasks/add',async(req,res)=>{
+router.post('/task/add',async(req,res)=>{
    const task = Task(req.body)
    await task.save();
-   res.redirect('/iniciarSesion')
+
+res.send('save') ;  
 });
 
-
+router.post('/registro-orientador/add',async(req,res)=>{
+    const registroO = RegistroO(req.body)
+    await registroO.save();
+    res.send('save') ;  
+ });
 
 export default router;

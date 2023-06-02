@@ -18,6 +18,11 @@ var hbs = create({
     extname: ".hbs",
 });
 
+
+
+
+
+
 app.engine(".hbs",hbs.engine);
 app.set("view engine", ".hbs");
 
@@ -31,6 +36,7 @@ const storage= multer.diskStorage({
         cb(null,uuid() + path.extname(file.originalname));
 }
 });
+
 
 app.use(multer({storage}).single('imagen'));
  
