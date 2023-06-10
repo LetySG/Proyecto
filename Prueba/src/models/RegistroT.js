@@ -14,6 +14,10 @@ const registroTSchema= new Schema({
         type:String,
         trim:true
     },
+    licenciatura_Asignada:{
+        type:String,
+        trim:true
+    },
     email:{
         type:String,
         trim:true

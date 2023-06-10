@@ -1,11 +1,11 @@
 import express from "express";
 import exphbs from "express-handlebars";
 import indexRoutes  from "./routes/routes";
+import authRoutes from "./routes/auth.routes";
 import  path, { dirname } from 'path';
 import { create } from "express-handlebars";
 import morgan from "morgan";
 import multer from "multer";
-//const uuidv4 = require("uuid/v4");
 import { uuid } from 'uuidv4';
 
 const app = express();
@@ -19,15 +19,12 @@ var hbs = create({
 });
 
 
-
-
-
-
 app.engine(".hbs",hbs.engine);
 app.set("view engine", ".hbs");
 
 //midlewares
 app.use(morgan('dev'));
+app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 const storage= multer.diskStorage({
@@ -40,10 +37,7 @@ const storage= multer.diskStorage({
 
 app.use(multer({storage}).single('imagen'));
  
-
-
 //routes
 app.use (indexRoutes);
-
-
+app.use(authRoutes);
 export default app;
