@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acceso</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+   body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #1f305e;
+      color: white;
+    }
+    .nav-link {
+    border-radius: 20px; /* Valor de border-radius para hacer los botones ovalados */
+    font-weight: bold; /* Texto en negrita */
+    color: white;
+  }
+  .nav-item:hover .nav-link {
+    background-color: #ffdb58; /* Color amarillo mostaza */
+    color: #000000; /* Color de texto negro */
+  }
+   
+    .navbar-brand img {
+    max-width: 180px;
+    padding-top: 5;
+}
+
+    .container {
+      margin-top: 50px;
+      padding: 15px;
+    }
+
+    .card {
+      border-radius: 10px;
+      width: 100%;
+      max-width: 900px; /* Ajusta este valor según tus necesidades */
+      margin: 0 auto;
+      padding: 20px; /* Ajusta este valor según tus necesidades */
+    }
+
+    .card-title {
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-control {
+      border-radius: 10px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: #1f305e;
+      color: white;
+      font-weight: bold;
+    }
+
+    .footer-bar {
+      background-color: #1f305e;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
+    
+    .separator {
+      border: none;
+      height: 1px;
+      background-color: blue;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="C:\Users\Windows\Desktop\Vistas\Imagenes\logo_unedl-.png" alt="brand" height="80">
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Acerca de</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Acceso</h5>
+            <form>
+              <div class="form-group">
+                <label for="usuario">Usuario</label>
+                <select class="form-control" id="usuario">
+                  <option value="">Seleccione un usuario</option>
+                  <option value="coordinador">Coordinador</option>
+                  <option value="orientador">Orientador Educativo</option>
+                  <option value="tutor">Tutor</option>
+                  <option value="alumno">Alumno</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="clave">Clave de Acceso</label>
+                <input type="password" class="form-control" id="clave" placeholder="Ingrese su clave de acceso">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="footer-bar">
+    <p>Derechos reservados &copy; 2023 Universidad</p>
+  </div>
+
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

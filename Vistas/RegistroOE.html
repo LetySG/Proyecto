@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro Usuario</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+ body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #1f305e;
+      color: white;
+    }
+    .nav-link {
+    border-radius: 20px; /* Valor de border-radius para hacer los botones ovalados */
+    font-weight: bold; /* Texto en negrita */
+    color: white;
+  }
+  .nav-item:hover .nav-link {
+    background-color: #ffdb58; /* Color amarillo mostaza */
+    color: #000000; /* Color de texto negro */
+  }
+
+    .navbar-brand img {
+    max-width: 180px;
+    padding-top: 5;
+}
+
+    .container {
+      margin-top: 50px;
+      padding: 15px;
+    }
+
+    .card {
+      border-radius: 10px;
+      width: 100%;
+      max-width: 900px; /* Ajusta este valor según tus necesidades */
+      margin: 0 auto;
+      padding: 20px; /* Ajusta este valor según tus necesidades */
+    }
+
+    .card-title {
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-control {
+      border-radius: 10px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: #1f305e;
+      color: white;
+      font-weight: bold;
+    }
+
+    .footer-bar {
+      background-color: #1f305e;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
+    
+    .separator {
+      border: none;
+      height: 1px;
+      background-color: blue;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+ 
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <img src="C:\Users\Windows\Desktop\Vistas\Imagenes\logo_unedl-.png" alt="brand" height="80">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Acerca de</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            
+            <form>
+             
+
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+              </div>
+
+              <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="apellido">Primer apellido</label>
+                <input type="text" class="form-control" id="apellido" placeholder="Ingrese primer apellido">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="apellido">Segundo apellido</label>
+                <input type="text" class="form-control" id="apellido" placeholder="Ingrese segundo apellido">
+              </div>
+            </div>
+            
+              <div class="form-group">
+                <label for="licenciatura">Licenciatura</label>
+                <select class="form-control" id="licenciatura">
+                    <option value="Nutricion UdeG">Nutrición UdeG</option>
+                    <option value="Psicologia">Psicología</option>
+                    <option value="Administracion de Empresas">Administración de Empresas</option>
+                    <option value="Actividad Fisica Deportiva Saludable">Actividad Física Deportiva Saludable</option>
+                    <option value="Turismo y Gestion de Proyectos">Turismo y Gestión de Proyectos</option>
+                    <option value="Arquitectura">Arquitectura</option>
+                    <option value="Ciencias de la Comunicacion">Ciencias de la Comunicación</option>
+                    <option value="Contaduria Publica">Contaduría Pública</option>
+                    <option value="Derecho">Derecho</option>
+                    <option value="Derecho Semiescolarizado">Derecho Semiescolarizado</option>
+                    <option value="Diseño para la Comunucacion Grafica">Diseño para la Comunicación Gráfica</option>
+                    <option value="Diseño Grafico y Digital">Diseño Gráfico y Digital</option>
+                    <option value="Gastronomia">Gastronomía</option>
+                    <option value="Ingenieria en Software">Ingeniería en Software</option>
+                    <option value="Mercadotecnia">Mercadotecnia</option>
+                    <option value="Negocios Internacionales">Negocios Internacionales</option>
+                    <option value="Administracion Estrategica de los Negocios">Administración Estratégica de los Negocios</option>
+                    <option value="Mercadotecnia Estrategica Ezcolarizada">Mercadotecnia Estratégica Escolarizada</option>
+                    <option value="Mercadotecnia Estrategica Mixta">Mercadotecnia Estratégica Mixta</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                <div class="form-group col-md-4 mb-3">
+                    <label for="grado">Grado</label>
+                    <select class="form-control" id="grado">
+                      <option value="1">Primer Grado</option>
+                      <option value="2">Segundo Grado</option>
+                      <option value="3">Tercer Grado</option>
+                      <option value="4">Cuarto Grado</option>
+                      <option value="5">Quinto Grado</option>
+                      <option value="6">Sexto Grado</option>
+                      <option value="7">Séptimo Grado</option>
+                      <option value="8">Octavo Grado</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="grupo">Grupo</label>
+                    <select class="form-control" id="grupo">
+                      <option value="Seleccione un grupo">Seleccione un Grupo</option>
+                      <option value="A">Grupo A</option>
+                      <option value="B">Grupo B</option>
+                      <option value="C">Grupo C</option>
+                      <option value="D">Grupo D</option>
+                      <option value="E">Grupo E</option>
+                      <option value="F">Grupo F</option>
+                      <option value="G">Grupo G</option>
+                      <option value="H">Grupo H</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="turno">Turno</label>
+                    <select class="form-control" id="turno">
+                        <option value="Seleccione un Turno">Seleccione un Turno</option>
+                      <option value="Matutino">Matutino</option>
+                      <option value="Vespertino">Vespertino</option>
+                      <option value="Nocturno">Nocturno</option>
+                    </select>
+                  </div>
+                </div>
+
+
+              <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" class="form-control" id="contrasena" placeholder="Ingrese una contraseña">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="confirmar-contrasena">Confirmar Contraseña</label>
+                <input type="password" class="form-control" id="confirmar-contrasena" placeholder="Confirme la contraseña">
+              </div>
+            </div>
+            
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Registrarse</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <p>Derechos reservados &copy; 2023 Universidad</p>
+  </div>
+
+
+           

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evidencias de Orientadores Educativos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #1f305e;
+      color: white;
+    }
+    .nav-link {
+    border-radius: 20px; /* Valor de border-radius para hacer los botones ovalados */
+    font-weight: bold; /* Texto en negrita */
+    color: white;
+  }
+  .nav-item:hover .nav-link {
+    background-color: #ffdb58; /* Color amarillo mostaza */
+    color: #000000; /* Color de texto negro */
+  }
+
+    .navbar-brand img {
+      max-width: 120px;
+      padding-top: 5px;
+    }
+
+    .container {
+        margin-top: 50px;
+      padding: 15px;
+    }
+
+    .table th,
+    .table td {
+      vertical-align: middle;
+    }
+
+    .table .actions i {
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .table .actions i:hover {
+      color: #dc3545;
+    }
+
+    .datepicker {
+      z-index: 9999 !important;
+    }
+    .footer-bar {
+      background-color: #1f305e;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="C:\Users\Windows\Desktop\Vistas\Imagenes\logo_unedl-.png" alt="brand" height="80">
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Acerca de</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="Buscar por nombre">
+      </div>
+      <div class="col-md-4">
+        <select class="form-control">
+          <option value="">Todas las licenciaturas</option>
+          <option value="lic1">Licenciatura 1</option>
+          <option value="lic2">Licenciatura 2</option>
+          <option value="lic3">Licenciatura 3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="date" class="form-control" id="fecha">
+      </div>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Licenciatura</th>
+          <th>Fecha</th>
+          <th>Evidencia</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>Licenciatura 1</td>
+          <td>2023-06-10</td>
+          <td><a href="#"><i class="fas fa-file-alt"></i></a></td>
+          <td class="actions">
+            <a href="#"><i class="fas fa-edit"></i></a>
+            <a href="#"><i class="fas fa-arrow-down"></i></a>
+
+
+
+          </td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>Licenciatura 2</td>
+          <td>2023-06-09</td>
+          <td><a href="#"><i class="fas fa-file-alt"></i></a></td>
+          <td class="actions">
+            <a href="#"><i class="fas fa-edit"></i></a>
+            <a href="#"><i class="fas fa-arrow-down"></i></a>
+
+
+
+          </td>
+        </tr>
+        <tr>
+          <td>Mike Johnson</td>
+          <td>Licenciatura 3</td>
+          <td>2023-06-08</td>
+          <td><a href="#"><i class="fas fa-file-alt"></i></a></td>
+          <td class="actions">
+            <a href="#"><i class="fas fa-edit"></i></a>
+            <a href="#"><i class="fas fa-arrow-down"></i></a>
+
+
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+  <div class="footer-bar">
+    <p>Derechos reservados &copy; 2023 Universidad</p>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
+
+
+
+

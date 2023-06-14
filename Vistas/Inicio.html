@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universidad Enrique Díaz de León DOE</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #1f305e;
+      color: white;
+    }
+
+    .nav-link {
+      border-radius: 20px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-item:hover .nav-link {
+      background-color: #ffdb58;
+      color: #000000;
+    }
+
+    .navbar-brand img {
+      max-width: 180px;
+      padding-top: 5px;
+    }
+
+    .container {
+      margin-top: 50px;
+      padding: 15px;
+    }
+
+    .card {
+      border-radius: 10px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card-title {
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-control {
+      border-radius: 10px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: #1f305e;
+      color: white;
+      font-weight: bold;
+    }
+
+    .footer-bar {
+      background-color: #1f305e;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .separator {
+      border: none;
+      height: 1px;
+      background-color: blue;
+      margin: 20px 0;
+    }
+
+    /* Estilos para comentarios */
+    .comment-box {
+      margin-top: 30px;
+    }
+
+    .comment-box h3 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .comment-box form {
+      margin-bottom: 20px;
+    }
+
+    .comment-box .comments {
+      margin-top: 20px;
+    }
+
+    .comment-box .comment {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .comment-box .comment .comment-author {
+      font-weight: bold;
+    }
+
+    .comment-box .comment .comment-date {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .comment-box .comment .comment-content {
+      margin-top: 5px;
+    }
+
+    /* Estilos para comentarios alineados a la derecha */
+    .comment-box .comment.text-right {
+      text-align: right;
+    }
+
+    /* Estilos para subir archivos */
+    .file-upload-box {
+      margin-top: 30px;
+    }
+
+    .file-upload-box h3 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .file-upload-box .file-upload {
+      margin-bottom: 20px;
+    }
+
+    .file-upload-box .uploaded-files {
+      margin-top: 20px;
+    }
+
+    .file-upload-box .uploaded-file {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .file-upload-box .uploaded-file .file-name {
+      font-weight: bold;
+    }
+
+    .file-upload-box .uploaded-file .file-date {
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="C:\Users\Windows\Desktop\Vistas\Imagenes\logo_unedl-.png" alt="brand" height="80">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Acerca de</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <!-- Contenido del carrusel -->
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="C:\Users\Windows\Desktop\Vistas\Imagenes\ORIENTACION.jpg" class="d-block w-100" alt="Imagen 1">
+        </div>
+        <div class="carousel-item">
+          <img src="C:\Users\Windows\Desktop\Vistas\Imagenes\redes-sociales-unedl.jpg" class="d-block w-100"
+            alt="Imagen 2">
+        </div>
+        <div class="carousel-item">
+          <img src="C:\Users\Windows\Desktop\Vistas\Imagenes\linea-telefonica.jpg" class="d-block w-100"
+            alt="Imagen 3">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
+    </div>
+    <p></p>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <h2 class="card-title">Últimas noticias</h2>
+          <p>¡Bienvenido/a a nuestro sitio web! Aquí encontrarás las últimas noticias y novedades de la Universidad.
+            Mantente actualizado/a con todo lo que sucede en nuestra institución.</p>
+          <div class="separator"></div>
+
+          <div class="comment-box">
+            <h3>Comentarios</h3>
+            <form>
+              <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
+              </div>
+              <div class="form-group">
+                <label for="comment">Comentario:</label>
+                <textarea class="form-control" id="comment" rows="4" placeholder="Escribe tu comentario"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+
+            <div class="comments">
+              <div class="comment">
+                <span class="comment-author">Juan Pérez</span>
+                <span class="comment-date">Hace 2 días</span>
+                <div class="comment-content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum efficitur lacus sed ligula
+                  interdum, vitae tincidunt elit semper. Proin finibus nisl a lacus tincidunt rutrum.
+                </div>
+              </div>
+              <div class="comment text-right">
+                <span class="comment-author">María López</span>
+                <span class="comment-date">Hace 1 día</span>
+                <div class="comment-content">
+                  Sed condimentum, mi at faucibus fringilla, est massa pulvinar elit, ut finibus justo est ac lectus.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <h2 class="card-title">Eventos</h2>
+          <p>No te pierdas los próximos eventos que se llevarán a cabo en la Universidad. ¡Anota las fechas y
+            participa!</p>
+          <div class="separator"></div>
+          <ul class="list-group">
+            <li class="list-group-item">Evento 1 - 12 de Junio</li>
+            <li class="list-group-item">Evento 2 - 20 de Junio</li>
+            <li class="list-group-item">Evento 3 - 28 de Junio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <p>Síguenos en:</p>
+      <a href="https://www.facebook.com/unedl.universidad" target="_blank"><i class="fab fa-facebook-f" style="color: white;"></i></a>
+      <a href="https://twitter.com/UnedlU?lang=es" target="_blank"><i class="fab fa-twitter" style="color: white;"></i></a>
+      <a href="https://www.instagram.com/unedl.universidad/" target="_blank"><i class="fab fa-instagram" style="color: white;"></i></a>
+      <a href="https://www.youtube.com/channel/UCb1gn6tWP-s19car8cfYwwA" target="_blank"><i class="fab fa-youtube" style="color: white;"></i></a>
+      <p>Derechos reservados &copy; 2023 Universidad</p>
+    </div>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subir Archivo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+ body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #1f305e;
+      color: white;
+    }
+    .nav-link {
+    border-radius: 20px; /* Valor de border-radius para hacer los botones ovalados */
+    font-weight: bold; /* Texto en negrita */
+    color: white;
+  }
+  .nav-item:hover .nav-link {
+    background-color: #ffdb58; /* Color amarillo mostaza */
+    color: #000000; /* Color de texto negro */
+  }
+    .navbar-brand img {
+    max-width: 180px;
+    padding-top: 5;
+}
+
+
+    .container {
+      margin-top: 50px;
+      padding: 15px;
+    }
+
+    .card {
+      border-radius: 10px;
+      width: 100%;
+      max-width: none; /* Ancho máximo ajustado a la página */
+      margin: 0 auto;
+      padding: 20px; /* Ajusta este valor según tus necesidades */
+    }
+
+    .card-title {
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-control {
+      border-radius: 10px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: #1f305e;
+      color: white;
+      font-weight: bold;
+    }
+
+    .footer-bar {
+      background-color: #1f305e;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
+    
+    .separator {
+      border: none;
+      height: 1px;
+      background-color: blue;
+      margin: 20px 0;
+    }
+
+    .drag-drop {
+      border: 2px dashed #ccc;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .drag-drop:hover {
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <img src="C:\Users\Windows\Desktop\Vistas\Imagenes\logo_unedl-.png" alt="brand" height="100">
+       
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Acerca de</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Subir Archivo</h5>
+            <div class="form-group drag-drop" id="dragDropArea">
+              <input type="file" class="form-control-file" id="archivo" accept=".doc,.docx,.pdf" style="display: none;">
+              <p>Arrastra y suelta el archivo aquí.</p>
+            </div>
+            <div class="form-group">
+                <label for="adjuntar">Adjuntar archivo</label>
+                <input type="file" class="form-control-file" id="adjuntar" accept=".doc,.docx,.pdf">
+              </div>
+             
+            <div class="form-group">
+              <label for="nombre">Nombre del archivo</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del archivo">
+            </div>
+            <div class="form-group">
+              <label for="descripcion">Descripción del archivo</label>
+              <textarea class="form-control" id="descripcion" rows="3" placeholder="Ingrese una descripción del archivo"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Compartir Archivo</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="footer-bar">
+    <p>Derechos reservados &copy; 2023 Universidad</p>
+  </div>
+
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script>
+    // Función para gestionar el evento de soltar el archivo en el área de arrastrar y soltar
+    function handleDrop(event) {
+      event.preventDefault();
+      var fileInput = document.getElementById("archivo");
+      fileInput.files = event.dataTransfer.files;
+    }
+
+    // Función para gestionar el evento de arrastrar el archivo sobre el área de arrastrar y soltar
+    function handleDragOver(event) {
+      event.preventDefault();
+    }
+
+    // Obtener el área de arrastrar y soltar
+    var dragDropArea = document.getElementById("dragDropArea");
+
+    // Agregar los eventos de arrastrar y soltar
+    dragDropArea.addEventListener("drop", handleDrop);
+    dragDropArea.addEventListener("dragover", handleDragOver);
+  </script>
+</body>
+</html>
