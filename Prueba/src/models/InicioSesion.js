@@ -14,21 +14,8 @@ const inicioSSchema= new Schema({
         default:true,
     },
 
-roles: [
-    {
-    ref: "Role",
-    type: Schema.Types.ObjectId
-    },
-],},
-{
-    timestamps:true,
-    versionKey:false
-}
-);
+});
 
-inicioSSchema.statics.encryptContraseña=async(contraseña)=>{
-    
-}
 
 
 export default  model('InicioSesion',inicioSSchema)

@@ -2,6 +2,7 @@ import express from "express";
 import exphbs from "express-handlebars";
 import indexRoutes  from "./routes/routes";
 import authRoutes from "./routes/auth.routes";
+import usersRoutes from "./routes/users.routes";
 import  path, { dirname } from 'path';
 import { create } from "express-handlebars";
 import morgan from "morgan";
