@@ -9,7 +9,11 @@ import morgan from "morgan";
 import multer from "multer";
 import { uuid } from 'uuidv4';
 
+import {createRoles} from './libs/initialSetup'
+
 const app = express();
+
+createRoles();
 app.set('views', path.join(__dirname, 'views'));
 
 //configuracion 

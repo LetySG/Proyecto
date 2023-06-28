@@ -1,10 +1,6 @@
 import { Router } from 'express';
 import Image from '../models/Image';
-import InicioSesion from '../models/InicioSesion';
-import RegistroO from '../models/RegistroO';
-import RegistroT from '../models/RegistroT';
-import RegistroA from '../models/RegistroA';
-import RegistroC from '../models/RegistroC';
+
 
 const router=Router();
 const cloudinary = require('cloudinary');
@@ -18,63 +14,61 @@ cloudinary.config({
 const fs = require("fs-extra");
 
 
-
-
-//Rutas Inicio Sesión
-router.get('/iniciarSesion',
-    (req,res)=>{
-        res.render('InicioSesion');
+//Vista de Principal-Información
+router.get('/', (req,res)=>{
+    res.render('index');
 })
-router.post('/iniciarSesion/add',async(req,res)=>{
-    const inicioS = InicioSesion(req.body)
-    await inicioS.save();
-    res.send('save') ;
-});
 
 //Rutas Registro Alumnos
 router.get('/registro/alumno',
     (req,res)=>{
-        res.render('RegistroA');
+        res.render('registroA');
 })
+//Ruta Registro Coordinador
+router.get('/registro/orientador',(req,res)=>
+{
+    res.render('acceso')
+})
+//Ruta Registro Coordinador
+router.get('/registro/coordinador',(req,res)=>
+{
+    res.render('registroC')
+})
+//Ruta Registro Coordinador
+router.get('/registro/tutor',(req,res)=>{
+    res.render('registroT')
+})
+/*
 router.post('/registro/alumno/add',async(req,res)=>{
     const registroA= RegistroA(req.body)
     await registroA.save();
     res.send('save') ;  
  });
 
-//Rutas Registro Coordinador
-router.get('/registro/coordinador',(req,res)=>{
-    res.render('RegistroC');
-});
-router.post('/registro/coordinador/add',async(req,res)=>{
+ router.post('/registro/coordinador/add',async(req,res)=>{
     const registroC= RegistroC(req.body)
     await registroC.save();
     res.send('save') ;  
  });
-//Rutas Registro Tutores
-router.get('/registro/tutor',(req,res)=>{
-    res.render('RegistroT');
-});
-router.post('/registro/tutor/add',async(req,res)=>{
+ router.post('/registro/tutor/add',async(req,res)=>{
     const registroT= RegistroT(req.body)
     await registroT.save();
     res.send('save') ;  
- });
-//Rutas Registro Orientador
-router.get('/registro/orientador',(req,res)=>{
-    res.render('RegistroO');
-});
-router.post('/registro/orientador/add',async(req,res)=>{
+ });router.post('/registro/orientador/add',async(req,res)=>{
     const registroO = RegistroO(req.body)
     await registroO.save();
     res.send('save') ;  
  });
 
+*/
 
-//Vista de Principal-Información
-router.get('/', (req,res)=>{
-    res.render('index');
-})
+
+
+
+
+
+
+
 //Vista para mostrar los archivos
 router.get('/files', async(req,res)=>{
    const image= await Image.find().lean();
@@ -104,7 +98,7 @@ const newImage= new Image({
     description,
     imageURL:result.url,
     public_id:result.url
-});S
+}); 
 await newImage.save();
 await fs.unlink(req.file.path);
 res.redirect('upload');

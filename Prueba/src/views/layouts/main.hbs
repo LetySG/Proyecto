@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doe</title>
-    <link rel="stylesheet" href="/Prueba/src/public/css/estilos.css">
+  
 <!--Boostrap-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <!--Libreria Swiper-->
@@ -49,6 +49,7 @@ const swiper = new Swiper(".mySwiper", {
    
       <style>
     /* Estilos personalizados */
+
     body {
       background-color: #f8f9fa;
       font-family: Arial, sans-serif;
@@ -58,11 +59,25 @@ const swiper = new Swiper(".mySwiper", {
       background-color: #1f305e;
       color: white;
     }
+  
+.nav-link {
+    border-radius: 20px; /* Valor de border-radius para hacer los botones ovalados */
+    font-weight: bold; /* Texto en negrita */
+    color: white;
+  }
+  .nav-item:hover .nav-link {
+    background-color: #ffdb58; /* Color amarillo mostaza */
+    color: #000000; /* Color de texto negro */
+  }
+
+
 
     .navbar-brand {
       font-weight: bold;
       font-size: 24px;
     }
+
+    
 
     .container {
       margin-top: 50px;
@@ -86,6 +101,8 @@ const swiper = new Swiper(".mySwiper", {
     .form-group label {
       font-weight: bold;
     }
+
+  
 
     .form-control {
       border-radius: 10px;
@@ -114,7 +131,22 @@ const swiper = new Swiper(".mySwiper", {
       margin: 20px 0;
     }
     
-
+.navbar-brand img {
+    max-width: 180px;
+    padding-top: 5;
+}
+.footer-bar {
+      background-color: #1f305e;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
     
   </style>
 
+ 
+    
+
+
+  

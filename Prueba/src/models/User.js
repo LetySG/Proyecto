@@ -23,7 +23,6 @@ const userSchema = new Schema({
     versionKey:false,
 
 });
-/*
 //Metodo para encriptar la contraseña
 userSchema.statics.encryptContraseña = async (contraseña) => {
 const salt = await bcrypt.genSalt(10)
@@ -34,6 +33,5 @@ userSchema.statics.compareContraseña =  async(contraseña,receivedContraseña) 
    return await bcrypt.compare(contraseña,receivedContraseña)
 }
 
-*/
 export default 
-model('User',userSchema)
+model('User',userSchema);
