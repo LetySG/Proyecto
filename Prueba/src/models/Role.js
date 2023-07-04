@@ -1,8 +1,6 @@
 import { Schema, model} from "mongoose";
 
 
-export const ROLES = ["alumno", "orientador", "coordinador","tutor"];
-
 const roleSchema= new Schema({
     name:String
 },

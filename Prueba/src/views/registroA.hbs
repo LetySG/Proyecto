@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Alumno</h5>
-            <form action="/registro/alumno/add" method="post">
+            <form action="/signup/user/add" method="post">
                   <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre">
@@ -12,11 +12,11 @@
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="apellido">Primer apellido</label>
-                      <input type="text" class="form-control" id="Primer_Apellido" name="Primer_Apellido"  placeholder="Ingrese primer apellido">
+                      <input type="text" class="form-control" id="primerApellido" name="primerApellido"  placeholder="Ingrese primer apellido">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="apellido">Segundo apellido</label>
-                      <input type="text" class="form-control" id="Segundo_Apellido" name="Segundo_Apellido" placeholder="Ingrese segundo apellido">
+                      <input type="text" class="form-control" id="segundoApellido" name="segundoApellido" placeholder="Ingrese segundo apellido">
                     </div>
                  </div>
                   <div class="form-group">
@@ -61,7 +61,7 @@
 
                   <div class="form-group col-md-6">
                       <label for="Matricula">Matricula</label>
-                      <input type="text" class="form-control" id="Matricula" name="Matricula" placeholder="Ingrese su matricula">
+                      <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Ingrese su matricula">
                     </div>
                    <div class="form-group col-md-4 mb-3">
                     <label for="grupo">Grupo</label>
@@ -82,7 +82,6 @@
                   <div class="form-group col-md-4 mb-3">
                     <label for="turno">Turno</label>
                     <select class="form-control" id="turno" name="turno">
-                        <option value="Seleccione un Turno">Seleccione un Turno</option>
                       <option value="Matutino">Matutino</option>
                       <option value="Vespertino">Vespertino</option>
                       <option value="Nocturno">Nocturno</option>
@@ -99,7 +98,7 @@
                 <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Ingrese una contraseña">
               </div>
               <div class="form-group col-md-6">
-                <label for="confirmar_contraseña">Confirmar Contraseña</label>
+                <label for="confirmarContraseña">Confirmar Contraseña</label>
                 <input type="password" class="form-control" id="confirmar_contraseña" name="confirmar_contraseña" placeholder="Confirme la contraseña">
               </div>
             </div>

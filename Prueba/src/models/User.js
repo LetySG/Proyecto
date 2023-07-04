@@ -6,11 +6,55 @@ const userSchema = new Schema({
         type:String,
         trim:true
     },
+    primerApellido:{
+        type:String,
+        trim:true
+    },
+    segundoApellido:{
+        type:String,
+        trim:true
+    },
+    licenciatura:{
+        type:String,
+        trim:true
+    },
+    grado:{
+        type:String,
+        trim:true
+    },
+    matricula:{
+        type:String,
+        trim:true
+    },
+    grupo:{
+        type:String,
+        trim:true
+    },
+    turno:{
+        type:String,
+        trim:true
+    },
     email:{
         type:String,
         trim:true
     },
     contraseña:{
+        type:String,
+        trim:true
+    },
+    licAsig:{
+        type:String,
+        trim:true
+    },
+    gradoAsig:{
+        type:String,
+        trim:true
+    },
+    grupoAsig:{
+        type:String,
+        trim:true
+    },
+    turnoAsig:{
         type:String,
         trim:true
     },
@@ -32,6 +76,5 @@ return await bcrypt.hash(contraseña,salt)
 userSchema.statics.compareContraseña =  async(contraseña,receivedContraseña) =>{
    return await bcrypt.compare(contraseña,receivedContraseña)
 }
-
 export default 
 model('User',userSchema);

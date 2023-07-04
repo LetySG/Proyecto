@@ -13,17 +13,18 @@
               <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="apellido">Primer apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingrese primer apellido">
+                <input type="text" class="form-control" id="primerApellido" 
+              name="primerApellido"   placeholder="Ingrese primer apellido">
               </div>
               <div class="form-group col-md-6">
                 <label for="apellido">Segundo apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingrese segundo apellido">
+                <input type="text" class="form-control" id="segundoApellido" name="segundoApellido" placeholder="Ingrese segundo apellido">
               </div>
             </div>
             
               <div class="form-group">
-                <label for="licenciatura">Licenciatura</label>
-                <select class="form-control" id="licenciatura">
+                <label for="licenciatura">Licenciatura Asignada</label>
+                <select class="form-control" id="licAsig" name="licAsig">
                     <option value="Nutricion UdeG">Nutrición UdeG</option>
                     <option value="Psicologia">Psicología</option>
                     <option value="Administracion de Empresas">Administración de Empresas</option>
@@ -47,8 +48,8 @@
                 </div>
                 <div class="form-row">
                 <div class="form-group col-md-4 mb-3">
-                    <label for="grado">Grado</label>
-                    <select class="form-control" id="grado">
+                    <label for="grado">Grado Asignado</label>
+                    <select class="form-control" id="gradoAsig" name="gradoAsig">
                       <option value="1">Primer Grado</option>
                       <option value="2">Segundo Grado</option>
                       <option value="3">Tercer Grado</option>
@@ -60,8 +61,8 @@
                     </select>
                   </div>
                   <div class="form-group col-md-4 mb-3">
-                    <label for="grupo">Grupo</label>
-                    <select class="form-control" id="grupo">
+                    <label for="grupo">Grupo Asignado</label>
+                    <select class="form-control" id="grupoAsig" name="grupoAsig">
                       <option value="Seleccione un grupo">Seleccione un Grupo</option>
                       <option value="A">Grupo A</option>
                       <option value="B">Grupo B</option>
@@ -74,8 +75,8 @@
                     </select>
                   </div>
                   <div class="form-group col-md-4 mb-3">
-                    <label for="turno">Turno</label>
-                    <select class="form-control" id="turno">
+                    <label for="turno">Turno Asignado</label>
+                    <select class="form-control" id="turnoAsig" name="turnoAsig">
                         <option value="Seleccione un Turno">Seleccione un Turno</option>
                       <option value="Matutino">Matutino</option>
                       <option value="Vespertino">Vespertino</option>
@@ -87,16 +88,16 @@
 
               <div class="form-group">
                 <label for="email">Correo Electrónico</label>
-                <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico">
               </div>
               <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="contrasena">Contraseña</label>
-                <input type="password" class="form-control" id="contrasena" placeholder="Ingrese una contraseña">
+                <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Ingrese una contraseña">
               </div>
               <div class="form-group col-md-6">
                 <label for="confirmar-contrasena">Confirmar Contraseña</label>
-                <input type="password" class="form-control" id="confirmar-contrasena" placeholder="Confirme la contraseña">
+                <input type="password" class="form-control" id="confirmarcontraseña" placeholder="Confirme la contraseña">
               </div>
             </div>
             

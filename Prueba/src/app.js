@@ -2,35 +2,44 @@ import express from "express";
 import exphbs from "express-handlebars";
 import indexRoutes  from "./routes/routes";
 import authRoutes from "./routes/auth.routes";
-import usersRoutes from "./routes/users.routes";
 import  path, { dirname } from 'path';
 import { create } from "express-handlebars";
 import morgan from "morgan";
 import multer from "multer";
 import { uuid } from 'uuidv4';
-
+import flash from "connect-flash";
+import session from "express-session";
 import {createRoles} from './libs/initialSetup'
 
 const app = express();
 
 createRoles();
 app.set('views', path.join(__dirname, 'views'));
-
 //configuracion 
 var hbs = create({
-    layoutsDir: path.join(app.get("views"), "layouts"),
+    layoutsDir: path.join(app.get('views'), 
+    'layouts'),
+
     defaultLayout: "main",
     extname: ".hbs",
 });
 
-
 app.engine(".hbs",hbs.engine);
 app.set("view engine", ".hbs");
+
 
 //midlewares
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
+app.use(flash());
 
 const storage= multer.diskStorage({
     destination: path.join(__dirname,'public/uploads'),
@@ -38,6 +47,15 @@ const storage= multer.diskStorage({
         cb(null,uuid() + path.extname(file.originalname));
 }
 });
+app.use((req,res,next)=>{
+res.locals.success_msg =req.flash('success_msg');
+    res.locals.error_msg =req.flash('error_msg');
+
+    // res.locals.error =req.flash('error');
+    res.locals.user =req.user || null;
+    next();
+});
+
 
 
 app.use(multer({storage}).single('imagen'));
