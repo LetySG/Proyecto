@@ -13,10 +13,7 @@ cloudinary.config({
 });
 //CONFIG MODULO FS-EXTRA
 const fs = require("fs-extra");
-//Vista de Principal-Información
-router.get('/', (req,res)=>{
-    res.render('index');
-})
+
 //Vista para mostrar los archivos
 router.get('/files', async(req,res)=>{
    const image= await Image.find().lean();

@@ -55,8 +55,8 @@ if (roles){
      newUser.roles=[role._id] 
 }
 const saveUser= await newUser.save();
-res.message('s')
-req.flash('success_msg','registro hecho');
+//res.message('s')
+//req.flash('success_msg','registro hecho');
 console.log(saveUser);
  res.render('registroC')
 }

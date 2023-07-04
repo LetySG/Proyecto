@@ -2,13 +2,14 @@ import express from "express";
 import exphbs from "express-handlebars";
 import indexRoutes  from "./routes/routes";
 import authRoutes from "./routes/auth.routes";
+import index from "./routes/index.routes";
+import alumnos from "./routes/alum.routes";
+import admin from "./routes/admin.routes";
 import  path, { dirname } from 'path';
 import { create } from "express-handlebars";
 import morgan from "morgan";
 import multer from "multer";
 import { uuid } from 'uuidv4';
-import flash from "connect-flash";
-import session from "express-session";
 import {createRoles} from './libs/initialSetup'
 
 const app = express();
@@ -32,14 +33,7 @@ app.set("view engine", ".hbs");
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
-app.set('trust proxy', 1) // trust first proxy
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}))
-app.use(flash());
+
 
 const storage= multer.diskStorage({
     destination: path.join(__dirname,'public/uploads'),
@@ -47,14 +41,7 @@ const storage= multer.diskStorage({
         cb(null,uuid() + path.extname(file.originalname));
 }
 });
-app.use((req,res,next)=>{
-res.locals.success_msg =req.flash('success_msg');
-    res.locals.error_msg =req.flash('error_msg');
 
-    // res.locals.error =req.flash('error');
-    res.locals.user =req.user || null;
-    next();
-});
 
 
 
@@ -63,4 +50,8 @@ app.use(multer({storage}).single('imagen'));
 //routes
 app.use (indexRoutes);
 app.use(authRoutes);
+app.use(index);
+app.use(alumnos);
+app.use(admin);
+
 export default app;
