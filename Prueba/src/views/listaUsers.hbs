@@ -1,0 +1,51 @@
+<div class="row">
+        <div class="card text-center  mb-3 mx-center border-warning ">
+            <div class="card-header border-warning font-weight-bold ">
+                Orientadores y Tutores Registrados
+                    <div class="col-md-8 font-weight-normal border-warning ">
+                            <table class= "table font-weight-light border-warning">
+                                <thead>
+
+                                    <tr>
+                                    <th>Cargo</th>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Licenciatura</th>
+                                    <th>Grado</th>
+                                    <th>Grupo</th>
+                                    <th>Turno</th>
+                                    <th>Operations</th>
+                                    </tr>
+                                </thead>
+                                    <tbody>
+                                        {{#each lista}}
+                                            <tr>
+                                                <td>{{roles}}</td>
+                                                <td>{{nombre}}</td>
+                                                <td>{{primerApellido}} 
+                                                            {{segundoApellido}}</td>
+                                                            <td>{{licAsig}}</td>
+                                                                <td>{{gradoAsig}}</td>
+                                                                
+                                                                <td>{{grupoAsig}}</td>
+                                                                <td>{{turnoAsig}}</td>
+                                                <td>
+                                                    
+                                                <a href = "{{imageURL}}" target="_blank" class="btn btn-primary">View</a>
+                                                <div class="btn btn-danger">Delete</div>
+                                                 <a href = "{{imageURL}}" target="_blank" class="btn btn-danger">Delete</a>
+                                                  <a href = "{{imageURL}}" target="_blank" class="btn btn-danger">Delete</a>
+                                                </td>
+                                            </tr>
+                                        {{/each}}
+                                    </tbody>
+                            </table>
+                    </div>
+
+                    </div>
+
+        </div>
+    
+</div>
+
+ 

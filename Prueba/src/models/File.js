@@ -1,6 +1,6 @@
 import { Schema, model} from "mongoose";
 
-const Image = new Schema({
+const File = new Schema({
     title:{
         type:String
     },
@@ -16,6 +16,6 @@ const Image = new Schema({
     
 });
     
-export default model('Image',Image);
+export default model('File',File);
 
 

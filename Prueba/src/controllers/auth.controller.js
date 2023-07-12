@@ -1,7 +1,8 @@
 import User from '../models/User'
-import jwt from 'jsonwebtoken'
+import jwt, { sign } from 'jsonwebtoken'
 import config from '../config'
 import Role from '../models/Role';
+
 
 
 //Metodos 'Registro Alumno'
@@ -10,7 +11,7 @@ export const signUp=async (req,res)=>{
 }
 export const signup=async (req,res)=>{
 const {nombre,primerApellido,segundoApellido,licenciatura,grado,matricula,grupo,turno,email,contraseña,roles}= req.body;
-//const userFound= User.find({email})
+//Crea un objeto de tipo 'User' 
 const newUser = new User({
      nombre,
      primerApellido,
@@ -24,13 +25,20 @@ const newUser = new User({
      contraseña: await User.encryptContraseña(contraseña)
 })
 if (roles){
-     const foundRoles =  await Role.find({name:{$in: roles}})
-     newUser.roles= foundRoles.map(role=> role._id)
+     const foundRoles =  await Role.findOne({name:{$in: roles}})
+     newUser.roles= foundRoles.map(role=> role.name)
 }else{
-     const role = await Role.findOne({name:"alumno"})
-     newUser.roles=[role._id] 
+     const role = await Role.findOne({name:'alumno'})
+     newUser.roles=[role.name] 
 }
+//Se guarda el nuevo usuario en la BD
 const saveUser= await newUser.save();
+
+const token= jwt.sign({id: saveUser},config.SECRET,{
+     expiresIn:86400
+})
+res.status(200).json({token})
+
 console.log(saveUser);
  res.render('registroA')
 }
@@ -48,16 +56,17 @@ const newUser = new User({
      contraseña: await User.encryptContraseña(contraseña)
 })
 if (roles){
-     const foundRoles =  await Role.find({name:{$in: roles}})
-     newUser.roles= foundRoles.map(role=> role._id)
+     const foundRoles =  await Role.findOne({name:{$in: roles}})
+     newUser.roles= foundRoles.map(role=> role.name)
 }else{
-     const role = await Role.findOne({name:"coordinador"})
-     newUser.roles=[role._id] 
+     const role = await Role.findOne({name:'coordinador'})
+     newUser.roles=[role.name] 
 }
 const saveUser= await newUser.save();
-//res.message('s')
-//req.flash('success_msg','registro hecho');
-console.log(saveUser);
+const token=jwt.sign({id:saveUser},config.SECRET,{
+     expiresIn:86400     
+})
+res.status(200).json({token})
  res.render('registroC')
 }
 //Metodos 'Registro Orientador'
@@ -79,11 +88,11 @@ const newUser = new User({
      contraseña: await User.encryptContraseña(contraseña)
 })
 if (roles){
-     const foundRoles =  await Role.find({name:{$in: roles}})
-     newUser.roles= foundRoles.map(role=> role._id)
+     const foundRoles =  await Role.findOne({name:{$in: roles}})
+     newUser.roles= foundRoles.map(role=> role.name)
 }else{
-     const role = await Role.findOne({name:"orientador"})
-     newUser.roles=[role._id] 
+     const role = await Role.findOne({name:'orientador'})
+     newUser.roles=[role.name] 
 }
 const saveUser= await newUser.save();
 console.log(saveUser);
@@ -105,11 +114,11 @@ const newUser = new User({
      contraseña: await User.encryptContraseña(contraseña)
 })
 if (roles){
-     const foundRoles =  await Role.find({name:{$in: roles}})
-     newUser.roles= foundRoles.map(role=> role._id)
+     const foundRoles =  await Role.findOne({name:{$in: roles}})
+     newUser.roles= foundRoles.map(role=> role.name)
 }else{
-     const role = await Role.findOne({name:"tutor"})
-     newUser.roles=[role._id] 
+     const role = await Role.findOne({name:'tutor'})
+     newUser.roles=[role.name] 
 }
 const saveUser= await newUser.save();
 console.log(saveUser);
@@ -126,14 +135,20 @@ export const signIn=async (req,res)=>{
 export const signin = async (req,res)=>{
 
 const userFound = await User.findOne({email:req.body.email}).populate("roles");
- if (!userFound) return res.status(400).send({message:"user not found"})
+ 
+if (!userFound) return res.status(400).json({message:"user not found"});
 
-const matchContraseña= await User.compareContraseña(req.body.contraseña,userFound.contraseña)
- console.log(userFound)
 
- if(!matchContraseña)return 
- res.status(401).send ({message:"invalid password"})
- //({token:null,message:"invalid password"})
-// res.send({token:''})
+ const matchContraseña = await User.compareContraseña(req.body.contraseña,userFound.contraseña)
+
+
+ if (!matchContraseña) return res.status(400).json({message:"contraseña invalida"});
+ 
+const token=jwt.sign({id: userFound._id},config.SECRET,{
+     expiresIn:86400
+})
+ res.render('listaUsers');
+
+ res.json({ token });
 
 }

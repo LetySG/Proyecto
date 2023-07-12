@@ -1,9 +1,11 @@
 import {Router} from 'express'
 
- const router=Router()
 
- import *as authCtrl from '../controllers/auth.controller'
 
+ import *as authCtrl from '../controllers/auth.controller';
+
+
+  const router=Router()
 
  //Rutas de Registro Alumno
  router.get('/signup',authCtrl.signUp)
