@@ -142,7 +142,7 @@ if (!userFound) return res.status(400).json({message:"user not found"});
  const matchContraseña = await User.compareContraseña(req.body.contraseña,userFound.contraseña)
 
 
- if (!matchContraseña) return res.status(400).json({message:"contraseña invalida"});
+
  
 const token=jwt.sign({id: userFound._id},config.SECRET,{
      expiresIn:86400

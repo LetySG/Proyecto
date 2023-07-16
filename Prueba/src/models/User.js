@@ -1,4 +1,4 @@
-import mongoose, { Schema, Types, model} from "mongoose";
+import { Schema, Types, model} from "mongoose";
 import bcrypt from 'bcryptjs';
 
 const userSchema = new Schema({
@@ -54,13 +54,31 @@ const userSchema = new Schema({
         type:String,
         trim:true
     },
+    claveC:{
+        type:String,
+        trim:true
+    },
+    
+    claveO:{
+        type:String,
+        trim:true
+    },
+    
+    claveT:{
+        type:String,
+        trim:true
+    },
     roles:[{
         ref:"Role",
-       type:mongoose.Schema.Types.ObjectId
+        type:Schema.Types.String
     }],
     licenciatura:[{
         ref:"Licenciatura",
-        type:mongoose.Schema.Types.ObjectId
+        type:Schema.Types.String
+    }],
+    config:[{
+        ref:"Config",
+        type:Schema.Types.String
     }]
 },{
     timestamps:true,

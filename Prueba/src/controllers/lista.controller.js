@@ -8,7 +8,7 @@ const fs=require("fs")
 */
 
 export const lista=async(req,res)=>{
-    const lista= await User.find().lean();    
+    const lista= await User.find({roles:{$in: ['tutor', 'orientador']}}).lean();    
 //console.log(lista)
     res.render('listaUsers',{lista});
 }

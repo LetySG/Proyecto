@@ -19,4 +19,8 @@ router.get('/politicas/de/Privacidad',(req,res)=>{
     res.render('politicas')
 });
 
+router.get('/acceso',(req,res)=>{
+    res.render('acceso')
+})
 export default router;
+
