@@ -25,11 +25,11 @@ const newUser = new User({
      contraseña: await User.encryptContraseña(contraseña)
 })
 if (roles){
-     const foundRoles =  await Role.findOne({name:{$in: roles}})
-     newUser.roles= foundRoles.map(role=> role.name)
+     const foundRoles =  await Role.find({name:{$in: roles}})
+     newUser.roles= foundRoles.map(role=> role._id)
 }else{
      const role = await Role.findOne({name:'alumno'})
-     newUser.roles=[role.name] 
+     newUser.roles=[role._id] 
 }
 //Se guarda el nuevo usuario en la BD
 const saveUser= await newUser.save();
@@ -56,11 +56,11 @@ const newUser = new User({
      contraseña: await User.encryptContraseña(contraseña)
 })
 if (roles){
-     const foundRoles =  await Role.findOne({name:{$in: roles}})
-     newUser.roles= foundRoles.map(role=> role.name)
+     const foundRoles =  await Role.find({name:{$in: roles}})
+     newUser.roles= foundRoles.map(role=> role._id)
 }else{
      const role = await Role.findOne({name:'coordinador'})
-     newUser.roles=[role.name] 
+     newUser.roles=[role._id] 
 }
 const saveUser= await newUser.save();
 const token=jwt.sign({id:saveUser},config.SECRET,{
@@ -89,10 +89,10 @@ const newUser = new User({
 })
 if (roles){
      const foundRoles =  await Role.findOne({name:{$in: roles}})
-     newUser.roles= foundRoles.map(role=> role.name)
+     newUser.roles= foundRoles.map(role=> role._id)
 }else{
      const role = await Role.findOne({name:'orientador'})
-     newUser.roles=[role.name] 
+     newUser.roles=[role._id] 
 }
 const saveUser= await newUser.save();
 console.log(saveUser);
@@ -114,11 +114,11 @@ const newUser = new User({
      contraseña: await User.encryptContraseña(contraseña)
 })
 if (roles){
-     const foundRoles =  await Role.findOne({name:{$in: roles}})
-     newUser.roles= foundRoles.map(role=> role.name)
+     const foundRoles =  await Role.find({name:{$in: roles}})
+     newUser.roles= foundRoles.map(role=> role._id)
 }else{
      const role = await Role.findOne({name:'tutor'})
-     newUser.roles=[role.name] 
+     newUser.roles=[role._id] 
 }
 const saveUser= await newUser.save();
 console.log(saveUser);
@@ -147,8 +147,6 @@ if (!userFound) return res.status(400).json({message:"user not found"});
 const token=jwt.sign({id: userFound._id},config.SECRET,{
      expiresIn:86400
 })
- res.render('listaUsers');
-
- res.json({ token });
+ res.render('listaUsers'); res.json({ token });
 
 }

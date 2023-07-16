@@ -12,8 +12,10 @@ cloudinary.config({
 //CONFIG MODULO FS-EXTRA
 const fs = require("fs-extra");
 
-
-
+/*
+const pdfPrinter= require("pdfmake");
+const fs=require("fs")
+*/
 
 export const upload=async (req,res)=>{
     const files = await File.find().lean();

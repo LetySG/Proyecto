@@ -11,5 +11,4 @@ versionKey:false
 });
 
 
-
 export default  model('Licenciatura',licenciaturaSchema)

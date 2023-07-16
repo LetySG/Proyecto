@@ -1,5 +1,11 @@
-<div class="row">
-        <div class="card text-center  mb-3 mx-center border-warning ">
+<form class="d-flex" role="search">
+        
+         <input type="search" aria-label="First name" class="form-control me-2" placeholder="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+
+
+
             <div class="card-header border-warning font-weight-bold ">
                 Orientadores y Tutores Registrados
                     <div class="col-md-8 font-weight-normal border-warning ">
@@ -15,6 +21,7 @@
                                     <th>Grupo</th>
                                     <th>Turno</th>
                                     <th>Operations</th>
+                                    <th></th>
                                     </tr>
                                 </thead>
                                     <tbody>
@@ -30,19 +37,48 @@
                                                                 <td>{{grupoAsig}}</td>
                                                                 <td>{{turnoAsig}}</td>
                                                 <td>
-                                                    
-                                                <a href = "{{imageURL}}" target="_blank" class="btn btn-primary">View</a>
-                                                <div class="btn btn-danger">Delete</div>
-                                                 <a href = "{{imageURL}}" target="_blank" class="btn btn-danger">Delete</a>
-                                                  <a href = "{{imageURL}}" target="_blank" class="btn btn-danger">Delete</a>
-                                                </td>
+                                                 
+          <!-- boton modal EDITAR-->                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Editar
+      </button> 
+       
+      <!-- Modal -->
+            
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <label for="formGroupExampleInput2" class="form-label w-25 p-3">Nombre</label>
+            <input type="text" aria-label="First name" class="form-control">
+            <label for="formGroupExampleInput2" class="form-label w-25 p-3">Apellidos</label>
+            <input type="text" aria-label="Last name" class="form-control">
+            <label for="formGroupExampleInput2" class="form-label w-25 p-3">Licenciatura</label>
+            <input type="text" aria-label="First name" class="form-control">
+            <label for="formGroupExampleInput2" class="form-label w-25 p-3">Grado</label>
+            <input type="text" aria-label="Last name" class="form-control">
+            <label for="formGroupExampleInput2" class="form-label w-25 p-3">Grupo</label>
+            <input type="text" aria-label="First name" class="form-control">
+            <label for="formGroupExampleInput2" class="form-label w-25 p-3">Turno</label>
+            <input type="text" aria-label="Last name" class="form-control">
+            
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar cambios</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+                                             </td>
                                             </tr>
                                         {{/each}}
                                     </tbody>
                             </table>
-                    </div>
-
-                    </div>
 
         </div>
     
