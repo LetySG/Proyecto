@@ -1,123 +1,245 @@
-
-  <h5 class="card-title">Solicitud de Apoyo de Orientación Educativa</h5>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <form action="/formato/solicitud/apoyo/Orientacion/Educativa" method="post">
-              <p class="texto-separador">Datos de la Solicitud:</p>
-              <div class="form-group">
-                <label for="fechaIntervencion">Fecha de hoy:</label>
-                <input type="date" class="form-control" id="fechaIntervencion">
-              </div>
-              <div class="form-group">
-                <label for="actividad">Actividad solicitada:</label>
-                <select class="form-control" id="actividad">
-                  <option value="Taller">Taller</option>
-                  <option value="Conferencia">Conferencia</option>
-                  <option value="Charla">Charla</option>
-                  <option value="Otros">Otros (especifique)</option>
+<h5 class="card-title" id="titulo">Solicitud de Apoyo de Orientación Educativa</h5>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <form action="/formato/solicitud/apoyo/Orientacion/Educativa"
+            method="post"
+          >
+            <input
+              id="tipoFormato"
+              name="tipoFormato"
+              type="hidden"
+              value="Formato Solicitud Apoyo Orientacion Educativa"
+            />
+            <p class="texto-separador center">Datos de la Solicitud</p>
+            <div class="form-group">
+              <label for="fechaIntervencion">Fecha de hoy:</label>
+              <input
+                type="date"
+                class="form-control"
+                id="fechaA"
+                name="fechaA"
+              />
+            </div>
+            <div class="form-group">
+              <label for="actividad">Actividad solicitada:</label>
+              <select class="form-control" id="actividadS" name="actividadS">
+                <option value="Taller">Taller</option>
+                <option value="Conferencia">Conferencia</option>
+                <option value="Charla">Charla</option>
+                <option value="Otros">Otros (especifique)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fechaIntervencion">Fecha para la intervención:</label>
+              <input
+                type="date"
+                class="form-control"
+                id="fechaI"
+                name="fechaI"
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="hora">Hora:</label>
+                <select class="form-control" id="hora" name="hora">
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label for="fechaIntervencion">Fecha para la intervención:</label>
-                <input type="date" class="form-control" id="fechaIntervencion">
+              <div class="form-group col-md-4">
+                <label for="minutos">Minutos:</label>
+                <select class="form-control" id="minutos" name="minutos">
+                  <option value="00">00</option>
+                  <option value="15">15</option>
+                  <option value="30">30</option>
+                  <option value="15">45</option>
+                </select>
               </div>
-              
-              
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="hora">Hora:</label>
-                  <select class="form-control" id="hora">
-                    <option value="01">01</option>
-                    <!-- Otras opciones de horas -->
-                    <option value="12">12</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="minutos">Minutos:</label>
-                  <select class="form-control" id="minutos">
-                    <option value="00">00</option>
-                    <option value="15">15</option>
-                    <!-- Otras opciones de minutos -->
-                    <option value="45">45</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="periodo">Período:</label>
-                  <select class="form-control" id="periodo">
-                    <option value="AM">AM</option>
-                    <option value="PM">PM</option>
-                  </select>
-                </div>
+              <div class="form-group col-md-4">
+                <label for="periodo">Período:</label>
+                <select class="form-control" id="periodo" name="periodo">
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
               </div>
-              <div class="texto-separador">Quién solicita (Tutor):</div>
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-              </div>
-
-              <div class="form-row">
+            </div>
+            <div class="texto-separador">Quién solicita(Tutor):</div>
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nomT"
+                name="nomT"
+                placeholder="Ingrese su nombre"required
+              />
+            </div>
+            <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="apellido">Primer apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingrese primer apellido">
+                <label for="pApellido">Primer apellido</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="pApellido"
+                  name="pApellido"
+                  placeholder="Ingrese primer apellido"required
+                />
               </div>
               <div class="form-group col-md-6">
                 <label for="apellido">Segundo apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingrese segundo apellido">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sApellido"
+                  name="sApellido"
+                  placeholder="Ingrese segundo apellido"required
+                />
               </div>
             </div>
-              <div class="form-group">
-                <label for="carrera">Carrera:</label>
-                <input type="text" class="form-control" id="carrera" placeholder="Ingrese la carrera">
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="licenciatura">Licenciatura</label>
+                <select class="form-control" id="carrera" name="carrera">
+                  <option value="Nutricion UdeG">Nutrición UdeG</option>
+                  <option value="Psicologia">Psicología</option>
+                  <option value="Administracion de Empresas">Administración de
+                    Empresas</option>
+                  <option value="Actividad Fisica Deportiva Saludable">Actividad
+                    Física Deportiva Saludable</option>
+                  <option value="Turismo y Gestion de Proyectos">Turismo y
+                    Gestión de Proyectos</option>
+                  <option value="Arquitectura">Arquitectura</option>
+                  <option value="Ciencias de la Comunicacion">Ciencias de la
+                    Comunicación</option>
+                  <option value="Contaduria Publica">Contaduría Pública</option>
+                  <option value="Derecho">Derecho</option>
+                  <option value="Derecho Semiescolarizado">Derecho
+                    Semiescolarizado</option>
+                  <option value="Diseño para la Comunucacion Grafica">Diseño
+                    para la Comunicación Gráfica</option>
+                  <option value="Diseño Grafico y Digital">Diseño Gráfico y
+                    Digital</option>
+                  <option value="Gastronomia">Gastronomía</option>
+                  <option value="Ingenieria en Software">Ingeniería en Software</option>
+                  <option value="Mercadotecnia">Mercadotecnia</option>
+                  <option value="Negocios Internacionales">Negocios
+                    Internacionales</option>
+                  <option
+                    value="Administracion Estrategica de los Negocios"
+                  >Administración Estratégica de los Negocios</option>
+                  <option
+                    value="Mercadotecnia Estrategica Ezcolarizada"
+                  >Mercadotecnia Estratégica Escolarizada</option>
+                  <option value="Mercadotecnia Estrategica Mixta">Mercadotecnia
+                    Estratégica Mixta</option>
+                </select>
               </div>
-              <div class="form-group">
-                <label for="gradoGrupoTurno">Grado, grupo y turno:</label>
-                <input type="text" class="form-control" id="gradoGrupoTurno" placeholder="Ingrese el grado, grupo y turno">
+              <div class="form-group col-md-4">
+                <label for="grado">Grado</label>
+                <select class="form-control" id="grado" name="grado">
+                  <option value="Primer Semestre">Primer Semestre </option>
+                  <option value="Segundo Semestre">Segundo Semestre</option>
+                  <option value="Tercer Semestre">Tercer Semestre </option>
+                  <option value="Cuarto Semestre">Cuarto Semestre</option>
+                  <option value="Quinto Semestre">Quinto Semestre </option>
+                  <option value="Sexto Semestre">Sexto Semestre </option>
+                  <option value="Séptimo Semestre Semestre">Séptimo Semestre
+                  </option>
+                  <option value="Octavo Semestre">Octavo Semestre </option>
+                </select>
               </div>
-              <div class="form-group">
+              <div class="form-group col-md-4">
+                <label for="grupo">Grupo</label>
+                <select class="form-control" id="grupo" name="grupo">
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                  <option value="E">E</option>
+                  <option value="F">F</option>
+                  <option value="G">G</option>
+                  <option value="H">H</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="turno">Turno</label>
+                <select class="form-control" id="turno" name="turno">
+                  <option value="Matutino">Matutino</option>
+                  <option value="Vespertino">Vespertino</option>
+                  <option value="Nocturno">Nocturno</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
                 <label for="numAlumnos">Número de alumnos:</label>
-                <input type="number" class="form-control" id="numAlumnos" placeholder="Ingrese el número de alumnos">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="numAlumnos"
+                  placeholder="Ingrese el número de alumnos"min="0"required
+                />
               </div>
-              <p class="texto-separador">Datos del Ponente:</p>
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-              </div>
-        
-              <div class="form-group ">
-                <label for="apellido">Primer apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingrese primer apellido">
-              </div>
-              <div class="form-group">
-                <label for="objetivo">Objetivo de la ponencia o la intervención:</label>
-                <textarea class="form-control" id="objetivo" rows="4" placeholder="Ingrese el objetivo de la ponencia o la intervención"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="necesidades">Necesidades por cubrir:</label>
-                <textarea class="form-control" id="necesidades" rows="4" placeholder="Ingrese las necesidades por cubrir"></textarea>
-              </div>
-              <p class="texto-separador">Datos del Coordinador:</p>
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-              </div>
-        
-              <div class="form-group ">
-                <label for="apellido">Primer apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingrese primer apellido">
-              </div>
-
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-              </div>
-             
-            </form>
-              
-          </div>
+            </div>
+            <p class="texto-separador">Datos del Ponente:</p>
+            <div class="form-group">
+              <label for="nombre">Nombre Completo</label>
+              <input
+                type="text"
+                class="form-control"
+                id="dPonente"
+                name="dPonente"
+                placeholder="Ingrese su nombre"required
+              />
+            </div>
+            <div class="form-group">
+              <label for="objetivo">Objetivo de la ponencia o la intervención:</label>
+              <textarea
+                class="form-control"
+                id="objPonencia"
+                name="objPonencia"
+                rows="4"
+                placeholder="Ingrese el objetivo de la ponencia o la intervención"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="necesidades">Necesidades por cubrir:</label>
+              <textarea
+                class="form-control"
+                id="necesidades"
+                name="necesidades"
+                rows="4"
+                placeholder="Ingrese las necesidades por cubrir"
+              ></textarea>
+            </div>
+            <p class="texto-separador">Datos del Coordinador:</p>
+            <div class="form-group">
+              <label for="nombre">Nombre completo </label>
+              <input
+                type="text"
+                class="form-control"
+                id="dCordi"
+                name="dCordi"
+                placeholder="Ingrese su nombre"required
+              />
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
         </div>
       </div>
-    </div><button type="submit" class="btn btn-primary">Descargar formato</button>
+    </div>
   </div>
-
+</div>

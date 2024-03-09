@@ -1,0 +1,25 @@
+ <!--submenu-->
+
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Menú
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/config">Claves de Acceso</a></li>
+            <li><a class="dropdown-item" href="/lista/Usuarios">Gestion
+                Orientadores yTutores</a></li>
+            <li><a
+                class="dropdown-item"
+                href="/listado/evidencias/Orientadores"
+              >Evidencias Orientadores Educativos</a></li>
+            <li><a class="dropdown-item" href="/upload">Material Orientadores
+                Educativos</a></li>
+            <li><a class="dropdown-item" href="/logout">Cerrar Sesión</a></li>
+          </ul>
+
+        </div>

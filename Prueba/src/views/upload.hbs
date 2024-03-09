@@ -1,56 +1,165 @@
-<h1>Subir archivos</h1>
-<div class ="row">
-    <div class="col-md-4">
-        <div class ="card">
-            <div class="card-body">
-                <form action="/upload" method="POST" enctype="multipart/form-data">
-                   <div class="form-group">
-                        <input type="text" name="title" class="form-control" placeholder = "Image title">
-                   </div>
-
-                    <div class="card-body">
-                      <div class="form-group">
-                          <textarea name="description" class="form-control" placeholder="Description">         </textarea>
-                      </div>
-                    </div>
-                    <div class="input-group mb-3">
-                      <div class="custom-file">
-                          <input type="file" name="file" class="custom-file-input" id="inputGroupFile01">
-                          <label for="inputGroupFile01" class="custom-file-label"></label>
-                      </div>
-                    </div>  
-                        <button class="btn btn-primary btn btn-outline-warning">Guardar</button>
-                </form>
-            </div>
-        </div> 
-        
-    </div>
-   
- <div class="col-md-8">
-        <table class="table">
-            <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Description</th>
-                  <th>Operations</th>
-                </tr>
-            </thead>
-                <tbody>
-                    {{#each files}}
-                        <tr>
-                            <td>{{title}}</td>
-                            <td>{{description}}</td>
-                            <td>
-                               <a href = "{{imageURL}}" target="_blank" class="btn btn-primary">View</a>
-                               <a href = "{{imageURL}}" target="_blank" class="btn btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    {{/each}}
-                </tbody>
-        </table>
+<div class="card-responsive text-center">
+  <div class="card-header">
+    <h5 class="card-title">Subir Archivos</h5>
   </div>
-
 </div>
+<br>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-body">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <input
+              type="text"
+              name="titulo"
+              class="form-control"
+              placeholder="Título"
+              id="titulo"required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              name="descripcion"
+              placeholder="Agrega una descripción"
+              class="form-control"
+              id="descripcion"required
+            ></textarea>
+          </div>
+          <div class="custom-file">
+            <input
+              type="file"
+              name="file"
+              class="custom-file-input"
+              id="file"required
+            />
+            <label for="inputGroupFile01" class="custom-file-label">Selecciona
+              un archivo</label>
+          </div>
+          <br>
+         <div class="form-group">
+          <br>
+                    <label for="licenciatura">Compartir:</label>
+                    <select class="form-control" id="asignado" name="asignado">
+                        <option value="Seleccione una Licenciatura">Seleccione una opción</option>
+                      <option value="Tutor">Tutores</option>
+                      <option value="Orientador">Orientadores</option>
+                      <option value="Alumnos">Alumnos</option>
+                    </select>
+                  </div>
+                         <button class="btn btn-primary">Compartir Archivos</button>
+        </form>
+      </div>
+    </div>
+    <br />
+    <br />
+  </div>
+</div>
+<div class="card-header">
+    <h5 class="card-title">Recursos Compartidos </h5>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-body">
+          <div class="table-responsive ">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th>Descripción</th>
+                  <th>Fecha</th>
+                  <th>Dirigido a </th>
+                  <th>Operaciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each files}}
+                  <tr>
+                    <td>{{titulo}}</td>
+                    <td>{{descripcion}}</td>
+                    <td>{{created_at}}</td>
+                    <td>{{asignado}}</td>
+                    <td>
+                      <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="editar"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                            data-bs-id="{{_id}}"
+                            data-bs-titulo ="{{titulo}}"
+                            data-bs-descripcion ="{{descripcion}}"
+                          >Editar
+                      </button> 
+                        <a
+                          href="/upload/files/delete/{{_id}}"
+                          class="btn btn-danger"
+                        >Borrar</a>
+                    </td><!--
+<iframe width="560" height="315" src="{{path}}" type="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                    <td> /*<a href="{{path}}" download="{{filename}}" target="_blank" class="btn btn-primary">Visualizar</a></td>
+                    <!--<<embed src="{{path}}" type="application/pdf"></embed>-->
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal -dialog">
+              <div class="modal-content">    
+                  <form action="/upload/files/update/{{_id}}" method="POST">
+                          <div class="modal-header">
+                              <h3 class="modal-title fs-5" id="exampleModalLabel">Editar</h3>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                          </div>
+                          <div class="modal-body col md-12 text primary">
+          <div class="modal-id d-none">
+                                  <label for="recipient-id " class="col-form-label text-primary w-10 p-1">id</label>
+                                  <input type="text" class="form-control" id="recipient-id"name="recipientId "required>
+                              </div>
+                              <div class="modal-titulo">
+                                  <label for="recipient-titulo " class="col-form-label text-primary w-10 p-1">Titulo</label>
+                                  <input type="text" class="form-control" id="recipient-titulo"name="recipientTitulo"required>
+                              </div>
+                            <div class="modal-descripcion">
+                                    <label for="recipient-descripcion" class="col-form-label text-primary w-10 p-1">Descripción:</label>
+                                    <input type="text" class="form-control" id="recipient-descripcion" required name="recipientDescripcion">
+                              </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button class="btn btn-primary" type="submit">Guardar</button>
+                            </div>
+                          </div>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>         
+<script>
+    const exampleModal = document.getElementById('exampleModal')
+    if (exampleModal) {
+        exampleModal.addEventListener('show.bs.modal', event => {
+            // Button that triggered the modal
+            const button = event.relatedTarget
+            // Extract info from data-bs-* attributes
+            const recipient = button.getAttribute('data-bs-id')
+            const recipient0 = button.getAttribute('data-bs-titulo')
+            const recipient1 = button.getAttribute('data-bs-descripcion')
+            // Update the modal's content.
+            const modalTitle = exampleModal.querySelector('.modal-title')
+            const modalBodyInput = exampleModal.querySelector('.modal-id input')
+            modalBodyInput.value = recipient;
+            const modalBodyInput1 = exampleModal.querySelector('.modal-titulo input')
+            modalBodyInput1.value = recipient0;
+            const modalBodyInput2 = exampleModal.querySelector('.modal-descripcion input')
+            modalBodyInput2.value = recipient1;
+        })
+    }
+</script>
 
- 
-        

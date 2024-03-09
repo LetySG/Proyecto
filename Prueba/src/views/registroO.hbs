@@ -1,112 +1,83 @@
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col"><br>
+        <br>
         <div class="card">
-          <div class="card-body">
-            
+          <div class="card-body"> 
            <form action="/registro/user/orientador/add" method="post">
               <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" name="nombre" placeholder="Ingrese su nombre">
-              </div>
-
-              <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="apellido">Primer apellido</label>
-                <input type="text" class="form-control" id="primerApellido" 
-              name="primerApellido"   placeholder="Ingrese primer apellido">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="apellido">Segundo apellido</label>
-                <input type="text" class="form-control" id="segundoApellido" name="segundoApellido" placeholder="Ingrese segundo apellido">
-              </div>
+               <label for="validationCustom01" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="validationCustom01" name="nombre" required>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="validationCustom02" class="form-label">Apellido Paterno</label>
+    <input type="text" class="form-control" id="validationCustom02" name="primerApellido" required>
+                      </div>
+                        <div class="form-group col-md-6">
+                           <label for="validationCustom03" class="form-label">Apellido Materno</label>
+    <input type="text" class="form-control" id="validationCustom03" name="segundoApellido" required>
+                      </div>
             </div>
-            
               <div class="form-group">
                 <label for="licenciatura">Licenciatura Asignada</label>
                 <select class="form-control" id="licAsig" name="licAsig">
-                    <option value="Nutricion UdeG">Nutrición UdeG</option>
-                    <option value="Psicologia">Psicología</option>
-                    <option value="Administracion de Empresas">Administración de Empresas</option>
-                    <option value="Actividad Fisica Deportiva Saludable">Actividad Física Deportiva Saludable</option>
-                    <option value="Turismo y Gestion de Proyectos">Turismo y Gestión de Proyectos</option>
-                    <option value="Arquitectura">Arquitectura</option>
-                    <option value="Ciencias de la Comunicacion">Ciencias de la Comunicación</option>
-                    <option value="Contaduria Publica">Contaduría Pública</option>
-                    <option value="Derecho">Derecho</option>
-                    <option value="Derecho Semiescolarizado">Derecho Semiescolarizado</option>
-                    <option value="Diseño para la Comunucacion Grafica">Diseño para la Comunicación Gráfica</option>
-                    <option value="Diseño Grafico y Digital">Diseño Gráfico y Digital</option>
-                    <option value="Gastronomia">Gastronomía</option>
-                    <option value="Ingenieria en Software">Ingeniería en Software</option>
-                    <option value="Mercadotecnia">Mercadotecnia</option>
-                    <option value="Negocios Internacionales">Negocios Internacionales</option>
-                    <option value="Administracion Estrategica de los Negocios">Administración Estratégica de los Negocios</option>
-                    <option value="Mercadotecnia Estrategica Ezcolarizada">Mercadotecnia Estratégica Escolarizada</option>
-                    <option value="Mercadotecnia Estrategica Mixta">Mercadotecnia Estratégica Mixta</option>
+                            <option value="Primer Semestre">Primer Semestre </option>
+                            <option value="Segundo Semestre">Segundo Semestre</option>
+                            <option value="Tercer Semestre">Tercer Semestre </option>
+                            <option value="Cuarto Semestre">Cuarto Semestre</option>
+                            <option value="Quinto Semestre">Quinto Semestre </option>
+                            <option value="Sexto Semestre">Sexto Semestre </option>
+                            <option value="Séptimo Semestre">Séptimo Semestre </option>
+                            <option value="Octavo Semestre">Octavo Semestre </option>
+                            <option value="Primer Cuatrimestre">Primer Cuatrimestre</option>
+                            <option value="Segundo Cuatrimestre">Segundo Cuatrimestre</option>
+                            <option value="Tercer Cuatrimestre">Tercer Cuatrimestre</option>
+                            <option value="Cuarto Cuatrimestre">Cuarto Cuatrimestre</option>
+                            <option value="Quinto Cuatrimestre ">Quinto Cuatrimestre </option>
+                            <option value="Sexto Cuatrimestre">Sexto Cuatrimestre</option>
+                            <option value="Séptimo Cuatrimestre">Séptimo Cuatrimestre</option>
+                            <option value="Octavo Cuatrimestre">Octavo Cuatrimestre</option>
+                            <option value="Noveno Cuatrimestre">Noveno Cuatrimestre</option>
+                            <option value="Décimo Cuatrimestre">Décimo Cuatrimestre</option>
                   </select>
                 </div>
                 <div class="form-row">
-                <div class="form-group col-md-4 mb-3">
-                    <label for="grado">Grado Asignado</label>
-                    <select class="form-control" id="gradoAsig" name="gradoAsig">
-                      <option value="1">Primer Grado</option>
-                      <option value="2">Segundo Grado</option>
-                      <option value="3">Tercer Grado</option>
-                      <option value="4">Cuarto Grado</option>
-                      <option value="5">Quinto Grado</option>
-                      <option value="6">Sexto Grado</option>
-                      <option value="7">Séptimo Grado</option>
-                      <option value="8">Octavo Grado</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-4 mb-3">
-                    <label for="grupo">Grupo Asignado</label>
-                    <select class="form-control" id="grupoAsig" name="grupoAsig">
-                      <option value="Seleccione un grupo">Seleccione un Grupo</option>
-                      <option value="A">Grupo A</option>
-                      <option value="B">Grupo B</option>
-                      <option value="C">Grupo C</option>
-                      <option value="D">Grupo D</option>
-                      <option value="E">Grupo E</option>
-                      <option value="F">Grupo F</option>
-                      <option value="G">Grupo G</option>
-                      <option value="H">Grupo H</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-4 mb-3">
+                
                     <label for="turno">Turno Asignado</label>
                     <select class="form-control" id="turnoAsig" name="turnoAsig">
                         <option value="Seleccione un Turno">Seleccione un Turno</option>
                       <option value="Matutino">Matutino</option>
                       <option value="Vespertino">Vespertino</option>
                       <option value="Nocturno">Nocturno</option>
+                      <option value="Nocturno">Sabatino</option>
                     </select>
                   </div>
-                </div>
-
-
               <div class="form-group">
                 <label for="email">Correo Electrónico</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico"required>
               </div>
               <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="contrasena">Contraseña</label>
-                <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Ingrese una contraseña">
+                <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Ingrese una contraseña"required>
               </div>
               <div class="form-group col-md-6">
                 <label for="confirmar-contrasena">Confirmar Contraseña</label>
-                <input type="password" class="form-control" id="confirmarcontraseña" placeholder="Confirme la contraseña">
+                <input type="password" class="form-control" id="confirmarcontraseña" placeholder="Confirme la contraseña"required>
               </div>
             </div>
-              <hr class="separator">
-
-<p class="text-center">Al hacer clic en Registrarte, aceptas la
-  <a 
- 
-  href="/politicas/de/Privacidad">Politicas de Privacidad.</a>
-</p>
+              <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Acepto las <a  href="/politicas/de/Privacidad">Politicas de Privacidad.</a>
+      </label>
+      <div class="invalid-feedback">
+        Debes aceptar las Politicas de Privacidad
+      </div>
+    </div>
+  </div>
             <div class="text-center">
               <button type="submit" class="btn btn-primary">Registrarte</button>
             </div>
@@ -116,10 +87,8 @@
       </div>
     </div>
   </div>
-
+  <br>
+  <br>
   <div class="footer-bar">
     <p>Derechos reservados &copy; 2023 Universidad</p>
   </div>
-
-
-           

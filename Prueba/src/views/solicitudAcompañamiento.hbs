@@ -1,0 +1,195 @@
+<h5 class="card-title" id="titulo">Acompañamiento Educativo y Psicológico</h5>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <form action="/solicitud" method="post">
+            <p class="texto-separador center">Datos de la Solicitud</p>
+            <input
+              id="entrevista"
+              name="entrevista"
+              type="hidden"
+              value="Solicitud Acompañamiento"/>
+            <input id="status" name="status" type="hidden" value="En proceso"/>
+            <div class="form-group">
+              <label for="nombre">Nombre Completo:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nomA"
+                name="nomA"required pattern="^[^0-9]+$"
+                placeholder="Ingrese su nombre"
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Edad">Edad</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="edad"
+                  name="edad"required
+                  placeholder="Ingrese su edad" max="18"
+                />
+
+              </div>
+              <div class="form-group col-md-6">
+                <label for="licenciatura">Licenciatura</label>
+                <select class="form-control" id="carrera" name="carrera">
+                  <option value="Nutricion UdeG">Nutrición UdeG</option>
+                  <option value="Psicologia">Psicología</option>
+                  <option value="Administracion de Empresas">Administración de
+                    Empresas</option>
+                  <option value="Actividad Fisica Deportiva Saludable">Actividad
+                    Física Deportiva Saludable</option>
+                  <option value="Turismo y Gestion de Proyectos">Turismo y
+                    Gestión de Proyectos</option>
+                  <option value="Arquitectura">Arquitectura</option>
+                  <option value="Ciencias de la Comunicacion">Ciencias de la
+                    Comunicación</option>
+                  <option value="Contaduria Publica">Contaduría Pública</option>
+                  <option value="Derecho">Derecho</option>
+                  <option value="Derecho Semiescolarizado">Derecho
+                    Semiescolarizado</option>
+                  <option value="Diseño para la Comunucacion Grafica">Diseño
+                    para la Comunicación Gráfica</option>
+                  <option value="Diseño Grafico y Digital">Diseño Gráfico y
+                    Digital</option>
+                  <option value="Gastronomia">Gastronomía</option>
+                  <option value="Ingenieria en Software">Ingeniería en Software</option>
+                  <option value="Mercadotecnia">Mercadotecnia</option>
+                  <option value="Negocios Internacionales">Negocios
+                    Internacionales</option>
+                  <option
+                    value="Administracion Estrategica de los Negocios"
+                  >Administración Estratégica de los Negocios</option>
+                  <option
+                    value="Mercadotecnia Estrategica Ezcolarizada"
+                  >Mercadotecnia Estratégica Escolarizada</option>
+                  <option value="Mercadotecnia Estrategica Mixta">Mercadotecnia
+                    Estratégica Mixta</option>
+                </select>
+
+              </div>
+              <div class="form-group col-md-4">
+                <label for="grado">Grado</label>
+                <select class="form-control" id="grado" name="grado">
+                  <option value="Primer Semestre">Primer Semestre </option>
+                  <option value="Segundo Semestre">Segundo Semestre</option>
+                  <option value="Tercer Semestre">Tercer Semestre </option>
+                  <option value="Cuarto Semestre">Cuarto Semestre</option>
+                  <option value="Quinto Semestre">Quinto Semestre </option>
+                  <option value="Sexto Semestre">Sexto Semestre </option>
+                  <option value="Séptimo Semestre Semestre">Séptimo Semestre
+                  </option>
+                  <option value="Octavo Semestre">Octavo Semestre </option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="grupo">Grupo</label>
+                <select class="form-control" id="grupo" name="grupo">
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                  <option value="E">E</option>
+                  <option value="F">F</option>
+                  <option value="G">G</option>
+                  <option value="H">H</option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="turno">Turno</label>
+                <select class="form-control" id="turno" name="turno">
+                  <option value="Matutino">Matutino</option>
+                  <option value="Vespertino">Vespertino</option>
+                  <option value="Nocturno">Nocturno</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="telefono">No.Telefónico</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="telefono"
+                  name="telefono"
+                  placeholder="Ingrese su número de telefono"required
+                />
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="telefono">Correo Electrónico:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="correo"
+                  name="correo"
+                  placeholder="Ingrese su correo electrónico"required
+                />
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="acompañamiento">Tipo de Acompañamiento Academico:</label>
+                <select
+                  class="form-control"
+                  id="tipoAcompañamiento"
+                  name="tipoAcompañamiento"
+                >
+                  <option value="Dificultad con alguna asignatura">Dificultad
+                    con alguna asignatura</option>
+                  <option value="Materias Reprobadas">Materias Reprobadas</option>
+                  <option
+                    value="Problemas con tus pagos de mensualidades"
+                  >Problemas con tus pagos de mensualidades</option>
+                  <option value="Apoyo con técnicas de estudio">Apoyos con
+                    técnicas de estudio</option>
+                  <option value="Dificultad con el manejo de TIC">Dificultad con
+                    el manejo de TIC</option>
+                  <option value="Problemas con el manejo de tu tiempo">Problemas
+                    con el manejo de tu tiempo</option>
+
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="acompañamiento">Tipo de Acompañamiento Psicológico:</label>
+                <select
+                  class="form-control"
+                  id="tipoAcompañamientoP"
+                  name="tipoAcompañamientoP"
+                >
+                  <option value="Problemas familiares">Problemas familiares</option>
+                  <option value="Problemas laborales">Problemas laborales</option>
+                  <option value="Problemas de pareja">Problemas de pareja</option>
+                  <option
+                    value="Pérdida de (un ser querido, empleo, etc.)"
+                  >Pérdida de (un ser querido, empleo, etc.)</option>
+                  <option
+                    value="Violencia (física, verbal, económica, etc.)"
+                  >Violencia (física, verbal, económica, etc.)</option>
+                  <option value="problemas de estrés y ansiedad">problemas de
+                    estrés y ansiedad</option>
+                  <option value="Depresión">Depresión</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12">
+                <label for="objetivo">Explica brevemente tu Problematica:</label>
+                <textarea
+                  class="form-control"
+                  id="problematicaAlumno"
+                  name="problematicaAlumno"
+                  rows="4"
+                  placeholder="Explique brevemente su problematica"
+                ></textarea>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

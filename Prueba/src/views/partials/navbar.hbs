@@ -1,24 +1,91 @@
-
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <img src="images/logo_unedl-.png" alt="brand" height="70">
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Inicio</a>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+     <img src="images/logo_unedl-.png" height="70">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">Acerca de</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacto">Contacto</a>
+        </li>
+        {{#if user}}
+                  <!--Menu Alumnos-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Alumnos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/recursos/alumnos">Material</a></li>
+            <li><a class="dropdown-item" href="/solicitud">Solicitud de Apoyo</a></li>
+            <li><hr class="dropdown-divider"></li>
+           </ul>
+        </li> 
+          <!--Menu Orientador-->
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span data-toggle="tooltip" title="Opción valida solo para orientadores">Orientador</span></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/files/orientadores">Materiales</a></li>
+            <li><a class="dropdown-item" href="/evidencias">Evidencias Actividades Realizadas</a></li>
+            <li><a class="dropdown-item" href="/lista/solicitud/alumno">Listado Solicitud Apoyo Alumnos</a></li>
+            <li><a class="dropdown-item" href="/derivacion/alumnos/al/centro/de/servicios/de/la/comunidad">Solicitud a Caip</a></li>  
+            <li><hr class="dropdown-divider"></li>
+           </ul>
+          </li>
+           <!--Menu Tutor-->
+         <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span data-toggle="tooltip" title="Opción valida solo para tutores">Tutor</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/files">Materiales</a></li>
+                <li><a class="dropdown-item" href="/formato/solicitud/apoyo/Orientacion/Educativa">Solicitud Apoyo Alumnos</a></li>
+                 <li><a class="dropdown-item" href="/formato/de/autorizacion/intervencion/tutorial/educativa">Autorización de Intervención Tutorial</a></li>
+                <li><a class="dropdown-item" href="/formato/reporte/de/resultado">Reporte de Resultado</a></li>
+                <li><a class="dropdown-item" href="/formato/entrevista/tutorial">Entrevista Tutorial</a></li>
+                <li><a class="dropdown-item" href="/derivacion/alumnos/al/centro/de/servicios/de/la/comunidad"
+                >Solicitud a Caip</a></li>
+                <li><hr class="dropdown-divider"></li>
+              </ul>
+         </li>
+          <!--Menu coordinador-->
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" 
+             aria-expanded="false">
+          <span data-toggle="tooltip" title="Opción valida solo para coordinadores">Coordinador</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/upload">Materiales</a></li>
+            <li><a class="dropdown-item" href="/config">Configuraciones</a></li>
+            <li><a class="dropdown-item" href="/listado/evidencias/Orientadores">Evidencias</a></li>
+            <li><a class="dropdown-item" href="/lista/Usuarios">Gestion de Orientadores y Tutores</a></li>
+            <li><a class="dropdown-item" href="/lista/solicitudes">Listado Solicitud de Reportes</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about">Acerca de</a>
+          <a class="nav-link" href="/logout">Cerrar Sesión</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contacto">Contacto</a>
-          </li>
-        </ul>
-      </div>
+        {{else}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Registro
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/acceso">Alumnos</a></li>
+            <li><a class="dropdown-item" href="/acceso/orientadores">Orientador</a></li>
+            <li><a class="dropdown-item" href="/acceso/tutores">Tutor</a></li>
+            <li><a class="dropdown-item" href="/registro/user/Coordinador">Coordinador</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
+            <li class="nav-item">
+          <a class="nav-link" href="/signin">Iniciar Sesion</a>
+            </li>
+        </li>
+      </ul>
     </div>
+    {{/if}}
+  </div>
 </nav>

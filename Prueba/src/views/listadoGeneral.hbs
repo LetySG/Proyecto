@@ -1,0 +1,89 @@
+<div class="card-responsive text-center">
+  <div class="card-header">
+    <h5 class="card-title">Lista Solicitud General</h5>
+  </div>
+</div>
+<br />
+
+<div class=" d-grid gap-2 d-md-flex justify-content-md-center">
+  <a class="btn btn-secondary center-block dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+   Filtrar por:
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/lista/solicitud/alumno">Todas</a></li>
+    <li><a class="dropdown-item" href="/lista/solicitud/alumno/revisada">Solicitudes revisadas</a></li>
+    <li><a class="dropdown-item" href="/lista/solicitud/alumno/proceso">Solicitudes en proceso</a></li>
+    <li><a class="dropdown-item" href="/lista/solicitud/alumno/pendientes">Solicitudes por revisar</a></li>
+  </ul>
+</div>
+<br />
+<br />
+{{#each listadoGeneral}}
+  <div class="card w-75 mb-3">
+    <div class="card-body">
+      <p class="card-text">NOMBRE: {{nomA}} </p>
+      <p class="card-text">EDAD: {{edad}}</p>
+      <p class="card-text">LICENCIATURA: {{carrera}}</p>
+      <p class="card-text">GRADO: {{grado}}</p>
+      <p class="card-text">GRUPO: {{grupo}}</p>
+      <p class="card-text">TURNO: {{turno}}</p>
+      <p class="card-text">TELEFONO: {{telefono}}</p>
+      <p class="card-text">CORREO: {{correo}}</p>
+      <p class="card-text">TIPO ACOMPAÑAMIENTO ACADEMICO:{{tipoAcompañamiento}}</p>
+      <p class="card-text">TIPO ACOMPAÑAMIENTO PSICOLOGICO:
+        {{tipoAcompañamientoP}}</p>
+      <p class="card-text">PROBLEMATICA: {{problematicaAlumno}}</p>
+      <p class="card-text">ESTADO DEL REPORTE: {{status}}</p>
+                                  <button type="button" class="btn btn-primary" id="editar" data-bs-toggle="modal"
+                              data-bs-target="#exampleModal" data-bs-id="{{_id}}"
+                                data-bs-status="{{status}}">Cambiar Estado</button>
+    </div>
+  </div>
+{{/each}}
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">    
+            <form action="/lista/solicitud/alumno/update" method="POST">
+                <div class="modal-header">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">Cambiar Estado Actual</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                </div>
+                <div class="modal-body col md-12 text primary">
+                     <div class="modal-id d-none">
+                        <label for="recipient-id " class="col-form-label text-primary w-10 p-1">id</label>
+                        <input type="text" class="form-control" id="recipient-id"name="recipientId"required>
+                    </div>
+                     <div class="modal-status">
+                    <label for="recipient-status" class="col-form-label text-primary w-10 p-1">Estado Actual </label>
+                      <select class="form-select" aria-label="Default select example"class="form-control" id="recipient-status" name="recipientStatus">
+  <option value="Por revisar">Por revisar </option>
+  <option value="En proceso">En proceso</option>
+  <option value="Revisado">Revisado</option>
+</select>
+                    </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    const exampleModal = document.getElementById('exampleModal')
+    if (exampleModal) {
+        exampleModal.addEventListener('show.bs.modal', event => {
+            // Button that triggered the modal
+            const button = event.relatedTarget
+            // Extract info from data-bs-* attributes
+             const recipient0 = button.getAttribute('data-bs-id')
+            const recipient = button.getAttribute('data-bs-status')
+            // Update the modal's content.
+            const modalTitle = exampleModal.querySelector('.modal-title')
+            const modalBodyInput0 = exampleModal.querySelector('.modal-id input')
+            modalBodyInput0.value = recipient0;
+            const modalBodyInput = exampleModal.querySelector('.modal-status input')
+            modalBodyInput.value = recipient;
+        })
+    }
+</script>

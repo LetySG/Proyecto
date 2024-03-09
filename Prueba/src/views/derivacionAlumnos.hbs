@@ -1,0 +1,160 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <form action="/derivacion/alumnos/al/centro/de/servicios/de/la/comunidad" method="post">
+            <p class="texto-separador center">Formato de derivación de Alumnos
+              al centro de la comunidad</p>
+            <br />
+            <p>La hoja de derivación es un instrumento a través del cual el DOE
+              o Tutor solicitan atención de las diferentes áreas del el Centro
+              de Servicios a la Comunidad UNEDL para seguimiento de los
+              estudiantes que así lo requieran.
+              <br />
+              Esta hoja representa la constancia documental de solicitud de
+              atención, así como el compromiso del área para llevar a cabo la
+              intervención.
+            </p>
+            <br />
+
+            <input id="entrevista" name="entrevista"value="Derivados" type="hidden"/>
+            <div class="form-group">
+              <label for="nombre">Nombre del Alumno</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nomA"
+                name="nomA"pattern="^[^0-9]+$" required 
+                placeholder="Ingrese el nombre completo del Alumno"
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="licenciatura">Licenciatura</label>
+                <select class="form-control" id="carrera" name="carrera">
+                  <option value="Nutricion UdeG">Nutrición UdeG</option>
+                  <option value="Psicologia">Psicología</option>
+                  <option value="Administracion de Empresas">Administración de
+                    Empresas</option>
+                  <option value="Actividad Fisica Deportiva Saludable">Actividad
+                    Física Deportiva Saludable</option>
+                  <option value="Turismo y Gestion de Proyectos">Turismo y
+                    Gestión de Proyectos</option>
+                  <option value="Arquitectura">Arquitectura</option>
+                  <option value="Ciencias de la Comunicacion">Ciencias de la
+                    Comunicación</option>
+                  <option value="Contaduria Publica">Contaduría Pública</option>
+                  <option value="Derecho">Derecho</option>
+                  <option value="Derecho Semiescolarizado">Derecho
+                    Semiescolarizado</option>
+                  <option value="Diseño para la Comunucacion Grafica">Diseño
+                    para la Comunicación Gráfica</option>
+                  <option value="Diseño Grafico y Digital">Diseño Gráfico y
+                    Digital</option>
+                  <option value="Gastronomia">Gastronomía</option>
+                  <option value="Ingenieria en Software">Ingeniería en Software</option>
+                  <option value="Mercadotecnia">Mercadotecnia</option>
+                  <option value="Negocios Internacionales">Negocios
+                    Internacionales</option>
+                  <option
+                    value="Administracion Estrategica de los Negocios"
+                  >Administración Estratégica de los Negocios</option>
+                  <option
+                    value="Mercadotecnia Estrategica Ezcolarizada"
+                  >Mercadotecnia Estratégica Escolarizada</option>
+                  <option value="Mercadotecnia Estrategica Mixta">Mercadotecnia
+                    Estratégica Mixta</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="grado">Grado</label>
+              <select class="form-control" id="grado" name="grado">
+                <option value="Primer Semestre">Primer Semestre </option>
+                <option value="Segundo Semestre">Segundo Semestre</option>
+                <option value="Tercer Semestre">Tercer Semestre </option>
+                <option value="Cuarto Semestre">Cuarto Semestre</option>
+                <option value="Quinto Semestre">Quinto Semestre </option>
+                <option value="Sexto Semestre">Sexto Semestre </option>
+                <option value="Séptimo Semestre Semestre">Séptimo Semestre
+                </option>
+                <option value="Octavo Semestre">Octavo Semestre </option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="grupo">Grupo</label>
+              <select class="form-control" id="grupo" name="grupo">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+                <option value="H">H</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="turno">Turno</label>
+              <select class="form-control" id="turno" name="turno">
+                <option value="Matutino">Matutino</option>
+                <option value="Vespertino">Vespertino</option>
+                <option value="Nocturno">Nocturno</option>
+              </select>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="nombre">Nombre Tutor:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nomT"
+                name="nomT"
+                required
+                placeholder="Nombre Completo "/>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="fechaDerivacion">Fecha de Derivación:</label>
+              <input
+                type="date"
+                class="form-control"
+                id="fechaD"
+                name="fechaD"
+                required/>
+            </div>
+            <div class="form-group col-md-8">
+              <label for="nombre">Servicio al que es Derivado:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="servicioD"
+                name="servicioD"
+                required
+                placeholder="Ingrese el dato "/>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="fechaCita">Fecha de la Cita:</label>
+              <input
+                type="date"
+                class="form-control"
+                id="fechaC"
+                name="fechaC"
+                required/>
+            </div>
+            <div class="form-group col-md-8">
+              <label for="turno">¿Se llevara a cabo seguimiento subsecuente?</label>
+              <select class="form-control" id="seguimiento" name="seguimiento">
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+            <br/>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

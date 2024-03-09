@@ -1,0 +1,1 @@
+https://mugan86.medium.com/generar-pdf-desde-nodejs-con-la-librer%C3%ADa-html-pdf-c8206b28c1b7

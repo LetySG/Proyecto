@@ -1,52 +1,32 @@
-<h1>Archivos </h1>
-   <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
-
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      height: calc((100% - 30px) / 2) !important;
-
-      /* Center slide text vertically */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
-
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-    
-    {{#each files}}
-
-    <img src="{{imageURL}}" alt="" class="swiper-slide">
-
-{{/each}} 
-    </div>
-    <div class="swiper-pagination"></div>
+<div class="card-responsive text-center">
+  <div class="card-header">
+    <h5 class="card-title">Recursos disponibles </h5>
   </div>
-
-
-
-
+</div>
+<div class="table-responsive col-md-6 offset-md-3">
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Fecha</th>
+        <th>Compartido por</th>
+        <th></th>
+        <th>Operaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each files}}
+        <tr>
+          <td>{{titulo}}</td>
+          <td>{{descripcion}}</td>
+          <td>{{created_at}}</td>
+          <td>
+          <td> <a href="{{path}}" download="{{filename}}" target="_blank" class="btn btn-primary">Descargar Archivo</a>
+          </td>
+          <td> <a href="{{path}}" target="_blank" class="btn btn-primary">Visualizar</a></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

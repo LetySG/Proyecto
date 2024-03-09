@@ -1,4 +1,6 @@
-<form action='/regist' method="post">
+<br>
+<br>
+<form action="/acceso/in" method="post">
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
@@ -8,8 +10,18 @@
             <form>
               <div class="form-group">
                 <label for="clave">Clave de Acceso</label>
-                <input type="password" class="form-control" id="clave" name="claveC" placeholder="Ingrese su clave de acceso" >
+                <div>
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="claveA"
+                    id="claveA" required
+                    placeholder="Ingrese su clave de acceso"/>     
+                  <div class="invalid-feedback">
+                      Campo Requerido</div>
+                </div>
               </div>
+         
               <div class="text-center">
                 <button type="submit" class="btn btn-primary">Ingresar</button>
               </div>
@@ -18,13 +30,8 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 
 </form>
 
-
-
- 
-  
-  

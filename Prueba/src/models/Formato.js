@@ -1,0 +1,193 @@
+import { Schema, model } from "mongoose";
+
+const Formato = new Schema({
+fechaA:{
+    type:Date,
+    trim:true,
+},
+actividadS:{
+    type:String,
+    trim:true,
+},
+fechaI:{
+    type:Date,
+    trim:true
+},
+hora:{
+    type:String,
+    trim:true
+},
+minutos:{
+    type:String,
+    trim:true,
+},
+periodo:{
+    type:String,
+    trim:true
+},
+nomT:{
+    type:String,
+    trim:true,
+},
+pApellido:{
+    type:String,
+    trim:true,
+},
+sApellido:{
+    type:String,
+    trim:true,
+},
+carrera:{
+    type:String,
+    trim:true,
+},
+grado:{
+    type:String,
+    trim:true,
+},
+grupo:{
+    type:String,
+    trim:true,
+},
+turno:{
+    type:String,
+    trim:true,
+},
+numAlumnos:{
+        type:String,
+        trim:true,
+
+},
+dPonentePonente:{
+    type:String,
+    trim:true
+},
+objPonencia:{
+   type:String,
+   trim:true
+},
+nececidades:{
+    type:String,
+    trim:true
+},
+dCordi:{
+        type:String,
+        trim:true
+},
+nomA:{
+    type:String,
+        trim:true
+},
+dCordiArea:{
+    type:String,
+        trim:true
+},
+intervencion:{
+    type:String,
+        trim:true
+},
+planteamientoProblem:{
+    type:String,
+        trim:true
+},
+cicloEscolar:{
+    type:String,
+    trim:true,
+},
+telefono:{
+    type:Number,
+    trim:true,
+},
+tipoEntrevista:{
+    type:String,
+    trim:true,
+},
+motivoEntrevista:{
+    type:String,
+    trim:true,
+},
+otros:{
+    type:String,
+    trim:true,
+},
+objEntrevista:{
+    type:String,
+    trim:true,
+},
+descEntrevista:{
+    type:String,
+    trim:true,
+},
+recomendaciones:{
+    type:String,
+    trim:true,
+},
+compromisos:{
+    type:String,
+    trim:true,
+},
+citaProx:{
+    type:Date,
+    trim:true,
+},
+descEstrategias:{
+    type:String,
+    trim:true,
+},
+fechaEntrega:{
+    type:Date,
+    trim:true,
+},
+fechaD:{
+    type:Date,
+    trim:true,
+},
+servicioD:{
+    type:String,
+    trim:true,
+},
+fechaC:{
+    type:Date,
+    trim:true,
+},
+seguimiento:{
+    type:String,
+    trim:true,
+},
+derivacion:{
+    type:String,
+    trim:true,
+},
+entrevista:{
+    type:String,
+    trim:true,
+},
+tipoAcompañamiento:{
+    type:String,
+    trim:true,
+},
+tipoAcompañamientoP:{
+    type:String,
+    trim:true,
+},
+problematicaAlumno:{
+    type:String,
+    trim:true,
+},
+correo:{
+    type:String,
+    trim:true,
+},
+edad:{
+    type:Number,
+    trim:true,
+},
+status:{
+    type:String,
+},
+User:[{
+    ref:"User",
+    type: Schema.Types.String,
+}],
+});
+export default model("Formato",Formato);

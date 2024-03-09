@@ -1,0 +1,44 @@
+<div class="card-responsive text-center">
+  <div class="card-header">
+    <h5 class="card-title">Lista Solicitud Acompañamiento Alumnos</h5>
+  </div>
+</div>
+<br />
+
+<div class=" d-grid gap-2 d-md-flex justify-content-md-center">
+  <a class="btn btn-secondary center-block dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+   Filtrar por:
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/lista/solicitud/alumno">Todas</a></li>
+    <li><a class="dropdown-item" href="/lista/solicitud/alumno/revisada">Solicitudes revisadas</a></li>
+    <li><a class="dropdown-item" href="/lista/solicitud/alumno/proceso">Solicitudes en proceso</a></li>
+    <li><a class="dropdown-item" href="/lista/solicitud/alumno/pendientes">Solicitudes por revisar</a></li>
+  </ul>
+</div>
+<br />
+<br />
+
+
+{{#each listaSolicitudRevisadas}}
+  <div class="card w-75 mb-3">
+    <div class="card-body">
+      <p class="card-text">NOMBRE: {{nomA}} </p>
+      <p class="card-text">EDAD: {{edad}}</p>
+      <p class="card-text">LICENCIATURA: {{carrera}}</p>
+      <p class="card-text">GRADO: {{grado}}</p>
+      <p class="card-text">GRUPO: {{grupo}}</p>
+      <p class="card-text">TURNO: {{turno}}</p>
+      <p class="card-text">TELEFONO: {{telefono}}</p>
+      <p class="card-text">CORREO: {{correo}}</p>
+      <p class="card-text">TIPO ACOMPAÑAMIENTO ACADEMICO:{{tipoAcompañamiento}}</p>
+      <p class="card-text">TIPO ACOMPAÑAMIENTO PSICOLOGICO:
+        {{tipoAcompañamientoP}}</p>
+      <p class="card-text">PROBLEMATICA: {{problematicaAlumno}}</p>
+      <p class="card-text">ESTADO DEL REPORTE: {{status}}</p>
+                                  <button type="button" class="btn btn-primary" id="editar" data-bs-toggle="modal"
+                              data-bs-target="#exampleModal" data-bs-id="{{_id}}"
+                                data-bs-status="{{status}}">Cambiar Estado</button>
+    </div>
+  </div>
+{{/each}}

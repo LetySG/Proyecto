@@ -1,87 +1,239 @@
-<form class="d-flex" role="search">
-        
-         <input type="search" aria-label="First name" class="form-control me-2" placeholder="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-</form>
-
-
-
-            <div class="card-header border-warning font-weight-bold ">
-                Orientadores y Tutores Registrados
-                    <div class="col-md-8 font-weight-normal border-warning ">
-                            <table class= "table font-weight-light border-warning">
-                                <thead>
-
-                                    <tr>
-                                    <th>Cargo</th>
-                                    <th>Nombre</th>
-                                    <th>Apellidos</th>
-                                    <th>Licenciatura</th>
-                                    <th>Grado</th>
-                                    <th>Grupo</th>
-                                    <th>Turno</th>
-                                    <th>Operations</th>
-                                    <th></th>
-                                    </tr>
-                                </thead>
-                                    <tbody>
-                                        {{#each lista}}
-                                            <tr>
-                                                <td>{{roles}}</td>
-                                                <td>{{nombre}}</td>
-                                                <td>{{primerApellido}} 
-                                                            {{segundoApellido}}</td>
-                                                            <td>{{licAsig}}</td>
-                                                                <td>{{gradoAsig}}</td>
-                                                                
-                                                                <td>{{grupoAsig}}</td>
-                                                                <td>{{turnoAsig}}</td>
-                                                <td>
-                                                 
-          <!-- boton modal EDITAR-->                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Editar
-      </button> 
-       
-      <!-- Modal -->
-            
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <label for="formGroupExampleInput2" class="form-label w-25 p-3">Nombre</label>
-            <input type="text" aria-label="First name" class="form-control">
-            <label for="formGroupExampleInput2" class="form-label w-25 p-3">Apellidos</label>
-            <input type="text" aria-label="Last name" class="form-control">
-            <label for="formGroupExampleInput2" class="form-label w-25 p-3">Licenciatura</label>
-            <input type="text" aria-label="First name" class="form-control">
-            <label for="formGroupExampleInput2" class="form-label w-25 p-3">Grado</label>
-            <input type="text" aria-label="Last name" class="form-control">
-            <label for="formGroupExampleInput2" class="form-label w-25 p-3">Grupo</label>
-            <input type="text" aria-label="First name" class="form-control">
-            <label for="formGroupExampleInput2" class="form-label w-25 p-3">Turno</label>
-            <input type="text" aria-label="Last name" class="form-control">
-            
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Guardar cambios</button>
-            </div>
+<div class="card-responsive text-center">
+  <div class="card-header">
+    <h5 class="card-title">Tutores</h5>
+  </div>
+  <br />
+  <div class="card-body">
+    <div class="table-responsive font-weight-normal">
+      <table
+        class="table align-middle font-weight-light border-warning justify-content-center mb-3"
+        id="listaUsers"
+      >
+        <thead class="justify-content-center mb-3">
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido
+              <br />Materno
+            </th>
+            <th>Apellido
+              <br />Paterno
+            </th>
+            <th>Licenciatura</th>
+            <th>Turno</th>
+            <th>Correo</th>
+            <th>Operations</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each lista}}
+            <tr>
+              <td>{{nombre}}</td>
+              <td>{{primerApellido}}</td>
+              <td> {{segundoApellido}}</td>
+              <td>{{licAsig}}</td>
+              <td>{{turnoAsig}}</td>
+              <td>{{email}}</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="editar"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  data-bs-id="{{_id}}"
+                  data-bs-nombre="{{nombre}}"
+                  data-bs-apellidoP="{{primerApellido}}"
+                  data-bs-apellidoM="{{segundoApellido}}"
+                  data-bs-licAsig="{{licAsig}}"
+                  data-bs-turnoAsig="{{turnoAsig}}"
+                  data-bs-email="{{email}}"
+                >Editar</button>
+              </td>
+              <td>
+                <form
+                  action="/lista/Usuarios/delete/{{_id}}?_method=DELETE"
+                  method="POST"
+                >
+                  <input type="hidden" name="_method" value="DELETE" />
+                  <button class="btn btn-primary btn-block" type="submit">
+                    Dar de baja
+                  </button>
+                </form>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="m-0 row justify-content-center mb-3">
+  <nav aria-label="Pagination">
+    <ul class="pagination">
+      <li class="page-item-disabled">
+        <a class="page-link">
+          <span aria-hidden="false">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a
+          class="page-link"
+          href="/lista/Usuarios/Orientadores"
+          aria-label="Next"
+        >
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="/lista/Usuarios/update" method="POST">
+        <div class="modal-header">
+          <h3 class="modal-title fs-5" id="exampleModalLabel">Editar</h3>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >x</button>
+        </div>
+        <div class="modal-body col md-12 text primary">
+          <div class="modal-id d-none">
+            <label
+              for="recipient-id "
+              class="col-form-label text-primary w-10 p-1"
+            >id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-id"
+              name="recipientId"
+            />
+          </div>
+          <div class="modal-name">
+            <label
+              for="recipient-name"
+              class="col-form-label text-primary w-10 p-1"
+            >Nombre:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-name"
+              name="recipientName"
+            />
+          </div>
+          <div class="modal-ape1">
+            <label
+              for="recipient-ape1"
+              class="col-form-label text-primary w-10 p-1"
+            >Apellido Paterno:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-ape1"
+              name="recipientApe1"
+            />
+          </div>
+          <div class="modal-ape2">
+            <label
+              for="recipient-ape2"
+              class="col-form-label text-primary w-10 p-1"
+            >Apellido Materno:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-ape2"
+              name="recipientApe2"
+            />
+          </div>
+          <div class="modal-licenciatura">
+            <label
+              for="recipient-ape2"
+              class="col-form-label text-primary w-10 p-1"
+            >Licenciatura:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-licenciatura"
+              name="recipientLicenciatura"
+            />
+          </div>
+          <div class="modal-turno">
+            <label
+              for="recipient-turno"
+              class="col-form-label text-primary w-10 p-1"
+            >Turno:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-turno"
+              name="recipientTurno"
+            />
+          </div>
+          <div class="modal-correo">
+            <label
+              for="recipient-correo"
+              class="col-form-label text-primary w-10 p-1"
+            >Correo:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-correo"
+              name="recipientCorreo"
+            />
           </div>
         </div>
-      </div>
-
-      
-                                             </td>
-                                            </tr>
-                                        {{/each}}
-                                    </tbody>
-                            </table>
-
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >Close</button>
+          <button class="btn btn-primary" type="submit">Guardar</button>
         </div>
-    
+      </form>
+    </div>
+  </div>
 </div>
-
- 
+<script>
+  const exampleModal = document.getElementById('exampleModal') if (exampleModal)
+  { exampleModal.addEventListener('show.bs.modal', event => { 
+  // Button that
+  triggered the modal const button = event.relatedTarget
+  // Extract info from data-bs-* attributes 
+  const recipient0 = button.getAttribute('data-bs-id')
+  const recipient = button.getAttribute('data-bs-nombre') const recipient1 =
+  button.getAttribute('data-bs-apellidoP') const recipient2 =
+  button.getAttribute('data-bs-apellidoM') const recipient3 =
+  button.getAttribute('data-bs-licAsig') const recipient4 =
+  button.getAttribute('data-bs-turnoAsig') const recipient7 =
+  button.getAttribute('data-bs-email') 
+  // Update the modal's content. const
+  modalTitle = exampleModal.querySelector('.modal-title') 
+  const modalBodyInput0 = exampleModal.querySelector('.modal-id input')
+   modalBodyInput0.value = recipient0;
+  const modalBodyInput = exampleModal.querySelector('.modal-name input') 
+    modalBodyInput.value = recipient; 
+  const modalBodyInput1 = exampleModal.querySelector('.modal-ape1 input') 
+  modalBodyInput1.value = recipient1; 
+  const modalBodyInput2 = exampleModal.querySelector('.modal-ape2 input')
+   modalBodyInput2.value = recipient2; 
+  const modalBodyInput3 = exampleModal.querySelector('.modal-licenciatura input')
+  modalBodyInput3.value = recipient3;
+  const modalBodyInput6 = exampleModal.querySelector('.modal-turno input')
+   modalBodyInput6.value = recipient6;
+  const modalBodyInput7 = exampleModal.querySelector('.modal-correo input') 
+  modalBodyInput7.value = recipient7;
+   }) }
+</script>

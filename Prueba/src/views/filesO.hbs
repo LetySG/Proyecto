@@ -1,0 +1,33 @@
+<div class="card-responsive text-center">
+  <div class="card-header">
+    <h5 class="card-title">Recursos disponibles </h5>
+  </div>
+</div>
+<div class="table-responsive col-md-6 offset-md-3">
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Fecha</th>
+        <th>Compartido por</th>
+        <th></th>
+        <th>Operaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each filesO}}
+        <tr>
+          <td>{{titulo}}</td>
+          <td>{{descripcion}}</td>
+          <td>{{created_at}}</td>
+          <td></td>
+          <td> <a href="{{path}}" download="{{filename}}" target="_blank" class="btn btn-primary">Descargar Archivo</a>
+          <!--<<embed src="{{path}}" type="application/pdf"></embed>-->
+          </td>
+          <td> <a href="{{path}}" target="_blank" class="btn btn-primary">Visualizar</a></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

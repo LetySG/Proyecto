@@ -1,5 +1,7 @@
 import { Schema, Types, model} from "mongoose";
 import bcrypt from 'bcryptjs';
+import { SchemaTypes } from "mongoose";
+import Clave from "./Clave";
 
 const userSchema = new Schema({
     nombre:{
@@ -38,6 +40,10 @@ const userSchema = new Schema({
         type:String,
         trim:true
     },
+    confirmar_contraseña:{
+        type:String,
+        trim:true
+    },
     licAsig:{
         type:String,
         trim:true
@@ -54,30 +60,17 @@ const userSchema = new Schema({
         type:String,
         trim:true
     },
-    claveC:{
-        type:String,
-        trim:true
-    },
-    
-    claveO:{
-        type:String,
-        trim:true
-    },
-    
-    claveT:{
-        type:String,
-        trim:true
-    },
     roles:[{
         ref:"Role",
-        type:Schema.Types.String
+        type:Schema.Types.ObjectId,
     }],
+    
     licenciatura:[{
         ref:"Licenciatura",
         type:Schema.Types.String
     }],
-    config:[{
-        ref:"Config",
+    Clave:[{
+        ref:"Clave",
         type:Schema.Types.String
     }]
 },{
@@ -86,13 +79,18 @@ const userSchema = new Schema({
 
 });
 //Metodo para encriptar la contraseña
-userSchema.statics.encryptContraseña = async (contraseña) => {
+userSchema.statics.encryptContraseña = async contraseña => {
 const salt = await bcrypt.genSalt(10)
 return await bcrypt.hash(contraseña,salt)
-}
+};
 //Metodo para comparar la contraseña
-userSchema.statics.compareContraseña =  async(contraseña,receivedContraseña) =>{
+userSchema.methods.matchContraseña= async function(contraseña){
+    return await bcrypt.compare(contraseña, this.contraseña);
+ }
+
+/*
+userSchema.methods.compareContraseña =  async(contraseña,receivedContraseña) =>{
    return await bcrypt.compare(contraseña,receivedContraseña)
-}
-export default 
+}*/
+module.exports=
 model('User',userSchema);

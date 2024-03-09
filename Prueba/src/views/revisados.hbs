@@ -1,0 +1,107 @@
+<div class="card-responsive text-center">
+    <div class="card-header">
+        <h5 class="card-title">Evidencias Orientadores</h5>
+    </div>
+    <br>
+<div class=" d-grid gap-2 d-md-flex justify-content-md-center">
+  <a class="btn btn-secondary center-block dropdown-toggle" href="/listado/evidencias/Orientadores" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+   Filtrar por:
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/listado/evidencias/Orientadores">Todas</a></li>
+    <li><a class="dropdown-item" href="/listado/evidencias/Orientadores/porRevisar">Evidencias por revisar </a></li>
+    <li><a class="dropdown-item" href="/listado/evidencias/Orientadores/Revisado">Evidencias Revisadas</a></li>
+    <li><a class="dropdown-item" href="/listado/evidencias/Orientadores/enProceso">Evidencias en proceso</a></li>
+  </ul>
+</div>
+<br />
+<br />
+
+     <div class="card-body">
+        <div class=" table-responsive font-weight-normal ">
+            <table class="table align-middle font-weight-light border-warning  justify-content-center mb-3"
+                id="listaUsers">
+                <thead class="justify-content-center mb-3">
+                    <tr>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Estado de la Entrega</th>
+                        <th>Fecha de Actualización</th>
+                       <!-- <th>compartido por el usuario</th>-->
+                        <th></th>
+                        <th>Operaciones</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each evidenciasRevisados}}
+                    <tr>
+                        <td>{{titulo}}</td>
+                        <td>{{descripcion}}</td>
+                        <td>{{status}}</td>
+                        <td>{{created_at}}</td>
+                        <td></td>
+                        <td>
+                            <button type="button" class="btn btn-primary" id="editar" data-bs-toggle="modal"
+                              data-bs-target="#exampleModal" data-bs-id="{{_id}}"
+                                data-bs-status="{{status}}"
+                            >Estado de Entrega</button>
+                        </td>
+                       <td> <a href="{{path}}" target="_blank" class="btn btn-primary">Visualizar</a></td>
+                        <td> <a href="{{path}}" download="{{filename}}" target="_blank" class="btn btn-primary">Descargar </a>
+                        <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">    
+            <form action="/listado/evidencias/Orientadores/porRevisar/update" method="POST">
+                <div class="modal-header">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">Editar</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                </div>
+                <div class="modal-body col md-12 text primary">
+                     <div class="modal-id d-none">
+                        <label for="recipient-id " class="col-form-label text-primary w-10 p-1">id</label>
+                        <input type="text" class="form-control" id="recipient-id"name="recipientId">
+                    </div>
+                    <div class="modal-status">
+                        <label for="recipient-status" class="col-form-label text-primary w-10 p-1">Estado Actual </label>
+                      <select class="form-select" aria-label="Default select example"class="form-control" id="recipient-status" name="recipientStatus">
+  <option value="Por revisar">Por revisar </option>
+  <option value="Revisado">Revisado</option>
+  <option value="En proceso">En proceso</option>
+</select>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-primary" type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    const exampleModal = document.getElementById('exampleModal')
+    if (exampleModal) {
+        exampleModal.addEventListener('show.bs.modal', event => {
+            // Button that triggered the modal
+            const button = event.relatedTarget
+            // Extract info from data-bs-* attributes
+             const recipient0 = button.getAttribute('data-bs-id')
+            const recipient = button.getAttribute('data-bs-status')
+            // Update the modal's content.
+            const modalTitle = exampleModal.querySelector('.modal-title')
+            const modalBodyInput0 = exampleModal.querySelector('.modal-id input')
+            modalBodyInput0.value = recipient0;
+            const modalBodyInput = exampleModal.querySelector('.modal-status input')
+            modalBodyInput.value = recipient;
+        })
+    }
+</script>

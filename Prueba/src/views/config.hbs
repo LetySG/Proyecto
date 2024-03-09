@@ -1,9 +1,58 @@
- <form action="/config">
-              <div class="form-group">
-                <label for="clave">Clave de Acceso Coordinador</label>
-                <input type="password" class="form-control" id="clave" name="clave" placeholder="Ingrese su clave de acceso" >
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary">Guardar</button>
-              </div>
-            </form>
+<br>
+<br>
+<div class=" d-grid gap-2 d-md-flex justify-content-md-center">
+  <a class="btn btn-secondary center-block dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+   Configuración clave de acceso a:
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/config">Alumnos</a></li>
+    <li><a class="dropdown-item" href="/config/orientadores">Orientadores</a></li>
+    <li><a class="dropdown-item" href="/config/tutores">Tutores</a></li>
+  </ul>
+</div>
+<br />
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Clave Alumnos</h5>
+          <form action="/config/add" method="post">
+            <div class="form-group">
+              <label for="claveA">Clave de Acceso</label>
+              <input
+                type="text"
+                class="form-control"
+                id="claveA"
+                name="claveA"
+                placeholder="Ingrese una nueva clave de acceso"required
+              />
+            </div>
+            <div class="form-group">
+              <label for="clave">Confirmación Clave de Acceso</label>
+              <input
+                type="text"
+                class="form-control"
+                id="confirm_claveA"
+                name="confirm_claveA"required
+                
+                placeholder="Ingrese nuevamente la clave de acceso"
+              />
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <form action="/config/clave/delete">
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Restablecer clave de acceso</button>
+    </div>
+  </form>
+</div>

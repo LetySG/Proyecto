@@ -1,0 +1,35 @@
+<div class="card-responsive text-center">
+  <div class="card-header">
+    <h5 class="card-title">Reporte Alumnos Atendidos de todas las modalidades</h5>
+  </div>
+</div>
+<div class="table-responsive col-md-6 offset-md-3">
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Licenciatura</th>
+        <th>Grado</th>
+        <th>Grupo </th>
+        <th>Turno</th>
+        <th>Telefono</th>
+        <th>Tipo Entrevista</th>
+        <th>Ciclo Escolar</th>
+      </tr>
+    </thead>
+    <tbody>
+          {{#each ReporteA}}
+            <tr>
+              <td>{{nomA}}</td>
+              <td>{{carrera}}</td>
+              <td> {{grado}}</td>
+              <td>{{grupo}}</td>
+              <td>{{turno}}</td>
+              <td>{{telefono}}</td>
+              <td>{{tipoEntrevista}}</td>
+              <td>{{cicloEscolar}}</td>    
+            </tr>
+          {{/each}}
+    </tbody>
+  </table>
+</div>

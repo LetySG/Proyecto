@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <form action="/formato/reporte/de/resultado" method="post">
+          <input id="tipoFormato" name="tipoFormato" type="hidden" value="Formato Reporte de Resultado" />
+            <p class="texto-separador center">Formato de Reporte de resultado de
+              intervención tutorial y/o DOE</p>
+            <div class="form-group">
+              <label for="nombre">Nombre del Tutor </label>
+              <input
+                type="text"
+                class="form-control"
+                id="nomT"
+                name="nomT"
+                placeholder="Nombre del Tutor"required
+              />
+            </div>
+            <div class="form-group">
+              <label for="licenciatura">Licenciatura</label>
+              <select class="form-control" id="carrera" name="carrera">
+                <option value="Nutricion UdeG">Nutrición UdeG</option>
+                <option value="Psicologia">Psicología</option>
+                <option value="Administracion de Empresas">Administración de
+                  Empresas</option>
+                <option value="Actividad Fisica Deportiva Saludable">Actividad
+                  Física Deportiva Saludable</option>
+                <option value="Turismo y Gestion de Proyectos">Turismo y Gestión
+                  de Proyectos</option>
+                <option value="Arquitectura">Arquitectura</option>
+                <option value="Ciencias de la Comunicacion">Ciencias de la
+                  Comunicación</option>
+                <option value="Contaduria Publica">Contaduría Pública</option>
+                <option value="Derecho">Derecho</option>
+                <option value="Derecho Semiescolarizado">Derecho
+                  Semiescolarizado</option>
+                <option value="Diseño para la Comunucacion Grafica">Diseño para
+                  la Comunicación Gráfica</option>
+                <option value="Diseño Grafico y Digital">Diseño Gráfico y
+                  Digital</option>
+                <option value="Gastronomia">Gastronomía</option>
+                <option value="Ingenieria en Software">Ingeniería en Software</option>
+                <option value="Mercadotecnia">Mercadotecnia</option>
+                <option value="Negocios Internacionales">Negocios
+                  Internacionales</option>
+                <option
+                  value="Administracion Estrategica de los Negocios"
+                >Administración Estratégica de los Negocios</option>
+                <option
+                  value="Mercadotecnia Estrategica Ezcolarizada"
+                >Mercadotecnia Estratégica Escolarizada</option>
+                <option value="Mercadotecnia Estrategica Mixta">Mercadotecnia
+                  Estratégica Mixta</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="nombre">Grupo y nombre alumno al
+                que va dirigido.
+              </label></div>
+            <div class="form-group col-md-6"></div>
+            <div class="form-group">
+              <label for="grupo">Grupo</label>
+              <select class="form-control" id="grupo" name="grupo">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+                <option value="H">H</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="nombre">Nombre Completo del Alumno </label>
+              <input
+                type="text"
+                class="form-control"
+                id="nomA"
+                name="nomA"
+                placeholder="Nombre Completo"required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="fechaIntervencion">Descripción de estrategias y
+                resultados:</label>
+              <textarea
+                class="form-control"
+                id="descEstrategias"
+                name="descEstretegias"
+                rows="4"
+                placeholder="..."required
+              >
+              </textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="fechaIntervencion">Fecha Entrega:</label>
+              <input
+                type="date"
+                class="form-control"
+                id="fechaEntrega"
+                name="fechaEntrega"required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

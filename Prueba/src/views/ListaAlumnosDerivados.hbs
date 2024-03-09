@@ -1,0 +1,34 @@
+
+<div class="card-responsive text-center">
+  <div class="card-header">
+    <h5 class="card-title">Reporte Alumnos Derivados a Caip</h5>
+  </div>
+</div>
+<div class="table-responsive col-md-6 offset-md-3">
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th>Nombre Alumno</th>
+        <th>Licenciatura</th>
+        <th>Grado</th>
+        <th>Grupo </th>
+        <th>Nombre Tutor</th>
+        <th>Servicio al que es derivado</th>
+        <th>Responsable de Derivacion</th>
+      </tr>
+    </thead>
+    <tbody>
+          {{#each ReporteD}}
+            <tr>
+              <td>{{nomA}}</td>
+              <td>{{carrera}}</td>
+              <td> {{grado}}</td>
+              <td>{{grupo}}</td>
+              <td>{{nomT}}</td>
+              <td>{{servicioD}}</td>
+              <td>{{derivacion}}</td>   
+            </tr>
+          {{/each}}
+    </tbody>
+  </table>
+</div>

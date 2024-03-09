@@ -1,0 +1,52 @@
+<div class="card-responsive text-center">
+  <div class="card-header">
+    <h5 class="card-title">Subir Archivos</h5>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-body">
+        <form action="/evidencias" method="POST" enctype="multipart/form-data">
+          <input id="EvidenciaOrientador" name="EvidenciaOrientador" 
+         value="Evidencia Orientador"  type="hidden">
+         <input id="status" name="status" 
+         value="Por revisar"type="hidden">
+          <div class="form-group">
+            <input
+              type="text"
+              name="titulo"
+              class="form-control"
+              placeholder="Título"
+              id="titulo" 
+              required 
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              name="descripcion"
+              placeholder="Agrega una descripción"
+              class="form-control"
+              id="descripcion"
+            ></textarea>
+          </div>
+          <div class="custom-file">
+            <input
+              type="file"
+              name="file"
+              class="custom-file-input"
+              id="file"
+            />
+            <label for="inputGroupFile01" class="custom-file-label">Selecciona
+              un archivo</label>
+          </div>
+          <br />
+          <button class="btn btn-primary">Mandar Evidencia</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>

@@ -1,0 +1,47 @@
+<br>
+<br>
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+   Configuración clave de acceso a:
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/config">Alumnos</a></li>
+    <li><a class="dropdown-item" href="/config/orientadores">Orientadores</a></li>
+    <li><a class="dropdown-item" href="/config/tutores">Tutores</a></li>
+  </ul>
+</div>
+<br>
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Clave Tutores</h5>
+            <form action="/config/tutores/add" method="post">
+              <div class="form-group">
+                <label for="clave">Clave de Acceso</label>
+                <input type="text" class="form-control" id="claveT" name="claveT" placeholder="Ingrese una nueva clave de acceso" required>
+              </div>
+              <div class="form-group">
+                <label for="clave">Confirmación Clade de Acceso</label>
+                <input type="text" class="form-control" id="confirm_claveT" name="confirm_claveT"placeholder="Ingrese nuevamente la clave de acceso" required>
+              </div>
+              <div class="text-center ">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container">
+    <form action="/config/claveT/delete">
+    <div class="text-center ">
+                    <button type="submit" class="btn btn-primary">Restablecer clave de acceso</button>
+                  </div>
+ 
+ 
+    </form>              
+</div>

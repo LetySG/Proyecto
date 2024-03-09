@@ -1,0 +1,244 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <form action="/formato/entrevista/tutorial" method="post">
+
+            <p class="texto-separador center">Formato de Entrevista Tutorial</p><input
+              id="entrevista"
+              name="entrevista"
+              value="Entrevista Tutorial"
+              type="hidden"
+            />
+            <div class="form-group">
+              <label for="nombre">Nombre completo </label>
+              <input
+                type="text"
+                class="form-control"
+                id="nomA"
+                name="nomA"
+                pattern="^[^0-9]+$"
+                required
+                placeholder="Nombre del Tutorado"
+              />
+            </div>
+            <div class="form-row">
+
+              <div class="form-group col-md-4">
+
+                <label for="licenciatura">Licenciatura</label>
+                <select class="form-control" id="carrera" name="carrera">
+                  <option value="Nutricion UdeG">Nutrición UdeG</option>
+                  <option value="Psicologia">Psicología</option>
+                  <option value="Administracion de Empresas">Administración de
+                    Empresas</option>
+                  <option value="Actividad Fisica Deportiva Saludable">Actividad
+                    Física Deportiva Saludable</option>
+                  <option value="Turismo y Gestion de Proyectos">Turismo y
+                    Gestión de Proyectos</option>
+                  <option value="Arquitectura">Arquitectura</option>
+                  <option value="Ciencias de la Comunicacion">Ciencias de la
+                    Comunicación</option>
+                  <option value="Contaduria Publica">Contaduría Pública</option>
+                  <option value="Derecho">Derecho</option>
+                  <option value="Derecho Semiescolarizado">Derecho
+                    Semiescolarizado</option>
+                  <option value="Diseño para la Comunucacion Grafica">Diseño
+                    para la Comunicación Gráfica</option>
+                  <option value="Diseño Grafico y Digital">Diseño Gráfico y
+                    Digital</option>
+                  <option value="Gastronomia">Gastronomía</option>
+                  <option value="Ingenieria en Software">Ingeniería en Software</option>
+                  <option value="Mercadotecnia">Mercadotecnia</option>
+                  <option value="Negocios Internacionales">Negocios
+                    Internacionales</option>
+                  <option
+                    value="Administracion Estrategica de los Negocios"
+                  >Administración Estratégica de los Negocios</option>
+                  <option
+                    value="Mercadotecnia Estrategica Ezcolarizada"
+                  >Mercadotecnia Estratégica Escolarizada</option>
+                  <option value="Mercadotecnia Estrategica Mixta">Mercadotecnia
+                    Estratégica Mixta</option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="grado">Grado</label>
+                <select class="form-control" id="grado" name="grado">
+                  <option value="Primer Semestre">Primer Semestre </option>
+                  <option value="Segundo Semestre">Segundo Semestre</option>
+                  <option value="Tercer Semestre">Tercer Semestre </option>
+                  <option value="Cuarto Semestre">Cuarto Semestre</option>
+                  <option value="Quinto Semestre">Quinto Semestre </option>
+                  <option value="Sexto Semestre">Sexto Semestre </option>
+                  <option value="Séptimo Semestre Semestre">Séptimo Semestre
+                  </option>
+                  <option value="Octavo Semestre">Octavo Semestre </option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="grupo">Grupo</label>
+                <select class="form-control" id="grupo" name="grupo">
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                  <option value="E">E</option>
+                  <option value="F">F</option>
+                  <option value="G">G</option>
+                  <option value="H">H</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+
+                <label for="turno">Turno</label>
+                <select class="form-control" id="turno" name="turno">
+                  <option value="Matutino">Matutino</option>
+                  <option value="Vespertino">Vespertino</option>
+                  <option value="Nocturno">Nocturno</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="ciclo">Ciclo Escolar: </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cicloEscolar"
+                  name="cicloEscolar"
+                  placeholder="Ingrese el ciclo escolar"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+
+              <div class="form-group col-md-4">
+                <label for="fechaIntervencion">Fecha de intervención:</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="fechaI"
+                  name="fechaI"
+                  required
+                />
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="fechaIntervencion">Telefono:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="telefono"
+                  name="telefono"
+                  max="10" required
+                />
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="periodo">Tipo Entrevista:</label>
+                <select
+                  class="form-control"
+                  id="tipoEntrevista"
+                  name="tipoEntrevista"
+                >
+                  <option value="Inicial">Inicial</option>
+                  <option value="Seguimiento">Seguimiento</option>
+                </select>
+              </div>
+
+            </div>
+            <div class="form-group">
+
+              <label for="periodo">Motivo de la Entrevista:</label>
+              <select
+                class="form-control"
+                id="motivoEntrevista"
+                name="motivoEntrevista"
+              >
+                <option value="Personal">Personal</option>
+                <option value="Actitudinal">Actitudinal</option>
+                <option value="Reprobación">Reprobación</option>
+                <option value="Ausentismo">Ausentismo</option>
+                <option value="Orientacion">Orientacion</option>
+                <option value="Bajo Rendimiento">Bajo Rendimiento</option>
+                <option value="Otros">Otros</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fechaIntervencion">Si contesto que el motivo es otro
+                (Explique):</label>
+              <textarea
+                class="form-control"
+                id="otros"
+                name="otros"
+                rows="4"
+                placeholder="Explique "
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="fechaIntervencion">Objetivo de la Entrevista:</label>
+              <textarea
+                class="form-control"
+                id="objEntrevista"
+                name="objEntrevista"
+                rows="4"
+                placeholder="Describa la necesidad del Alumno"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="fechaIntervencion">Descripción de la Entrevista:</label>
+              <textarea
+                class="form-control"
+                id="desEntrevista"
+                name="desEntrevista"
+                rows="4"
+                placeholder="(Relate lo que aconteció en la entrevista y su problema y/o escriba las actividades realizadas en la sesión, así como la actitud del alumno ante el problema así como los resultados ante el acompañamiento al alumno)"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="fechaIntervencion">Recomendaciones:</label>
+              <textarea
+                class="form-control"
+                id="recomendaciones"
+                name="recomendaciones"
+                rows="4"
+                placeholder="(Explique las estrategias a seguir para el apoyo del alumno)"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="fechaIntervencion">Compromisos Generados:</label>
+              <textarea
+                class="form-control"
+                id="compromisos"
+                name="compromisos"
+                rows="4"
+                placeholder="Explique ampliamente los acuerdos tomados para la solución y/o toma de decisiones del alumno"required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="fechaIntervencion">Cita Próxima:</label>
+              <input
+                type="date"
+                class="form-control"
+                id="citaProx"
+                name="citaProx"
+              />
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

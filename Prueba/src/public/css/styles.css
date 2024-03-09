@@ -1,90 +1,82 @@
- /* Estilos personalizados */
-
- body {
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
-  }
-
-  .navbar {
-    background-color: #1f305e;
-    color: white;
-  }
-
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+.navbar {
+  background-color: #1f305e;
+  color: white;
+}
 .nav-link {
   border-radius: 20px; /* Valor de border-radius para hacer los botones ovalados */
   font-weight: bold; /* Texto en negrita */
   color: white;
 }
+
 .nav-item:hover .nav-link {
   background-color: #ffdb58; /* Color amarillo mostaza */
   color: #000000; /* Color de texto negro */
 }
 
-
-
-  .navbar-brand {
-    font-weight: bold;
-    font-size: 24px;
-  }
-    .navbar-brand img {
+.btn-group-dropend{
+  border-radius: 20px;
+  max-width: 180px;
+  padding-top: 5;
+  font-weight: bold;
+  font-size: 24px;
+}
+.nav {
+  background-color: #1f305e;
+}
+.navbar-brand {
+  font-weight: bold;
+  font-size: 24px;
+}
+.navbar-brand img {
   max-width: 180px;
   padding-top: 5;
 }
-
-  
-
-  .container {
-    margin-top: 10px;
-    padding: 15px;
-  }
-
-  .card {
-    border-radius: 10px;
-    width: 100%;
-    max-width: 900px; /* Ajusta este valor según tus necesidades */
-    margin: 0 auto;
-    padding: 20px; /* Ajusta este valor según tus necesidades */
-  }
-
-  .card-title {
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 20px;
-  }
-
-  .form-group label {
-    font-weight: bold;
-  }
-
-
-
-  .form-control {
-    border-radius: 10px;
-  }
-
-  .btn {
-    margin-top: 20px;
-    background-color: #1f305e;
-    color: white;
-    font-weight: bold;
-  }
-
-  .footer-bar {
-    background-color: #1f305e;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    font-size: 14px;
-
-  }
-  
-  .separator {
-    border: none;
-    height: 1px;
-    background-color: blue;
-    margin: 20px 0;
-  }
-  .texto-separador {
+.container-fluid{
+  margin-top: 10px;
+  padding: 15px;
+}
+.card {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 900px; /* Ajusta este valor según tus necesidades */
+  margin: 0 auto;
+  padding: 20px; /* Ajusta este valor según tus necesidades */
+}
+.card-title {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.form-group label {
+  font-weight: bold;
+}
+.form-control {
+  border-radius: 10px;
+}
+.btn {
+  margin-top: 20px;
+  background-color: #1f305e;
+  color: white;
+  font-weight: bold;
+}
+.footer-bar {
+  background-color: #1f305e;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+.separator {
+  border: none;
+  height: 1px;
+  background-color: blue;
+  margin: 20px 0;
+}
+.texto-separador {
   color: navy;
   font-weight: bold; /* Texto en negrita */
   text-align: left; /* Alineación a la izquierda */
@@ -92,7 +84,7 @@
   font-weight: bold;
   margin: 10px 0;
 }
-    h5 {
+h5 {
   font-size: 32px; /* Tamaño de letra grande */
   color: navy; /* Color azul marino */
   font-weight: bold; /* Texto en negrita */
@@ -101,14 +93,11 @@
   margin-top: 20px; /* Espacio superior */
   margin-bottom: 20px; /* Espacio inferior */
 }
-.navbar-brand img {
-  max-width: 180px;
-  padding-top: 5;
-}
+
 .footer-bar {
-    background-color: #1f305e;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    font-size: 14px;
-  }
+  background-color: #1f305e;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}

@@ -1,0 +1,341 @@
+<nav class="navbar navbar-expand-lg ">
+  <div class="container">
+   <img src="images/logo_unedl-.png" height="70">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">Acerca de</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacto">Contacto</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+    
+       {{#if user}}
+           <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Menú
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/config">Claves de Acceso</a></li>
+              <li><a class="dropdown-item" href="/lista/Usuarios">Gestion
+                  Orientadores yTutores</a></li>
+              <li><a
+                  class="dropdown-item"
+                  href="/listado/evidencias/Orientadores"
+                >Evidencias Orientadores Educativos</a></li>
+              <li><a class="dropdown-item" href="/upload">Material Orientadores
+                  Educativos</a></li>
+              <li><a class="dropdown-item" href="/alumnos/derivados/lista">Alumnos derivados a CAIP</a></li>
+                  <li><a class="dropdown-item" href="/logout">Cerrar Sesión</a></li>
+            </ul>
+
+      {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/signin">Iniciar Sesión</a>
+          </li>
+          <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-expanded="false"
+          >Registro</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/acceso">Alumnos</a></li>
+            <li><a
+                class="dropdown-item"
+                href="/acceso/orientadores"
+              >Orientadores</a></li>
+            <li><a class="dropdown-item" href="/acceso/tutores">Tutores</a></li>
+          </ul>
+           </li>
+       <!-- {{/if}}-->
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="card-responsive text-center">
+  <div class="card-header">
+    <h5 class="card-title">Tutores</h5>
+  </div>
+  <br />
+  <div class="card-body">
+    <div class="table-responsive font-weight-normal">
+      <table
+        class="table align-middle font-weight-light border-warning justify-content-center mb-3"
+        id="listaUsers"
+      >
+        <thead class="justify-content-center mb-3">
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido
+              <br />Materno
+            </th>
+            <th>Apellido
+              <br />Paterno
+            </th>
+            <th>Licenciatura</th>
+            <th>Grado</th>
+            <th>Grupo</th>
+            <th>Turno</th>
+            <th>Correo</th>
+            <th>Operations</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each lista}}
+            <tr>
+              <td>{{nombre}}</td>
+              <td>{{primerApellido}}</td>
+              <td> {{segundoApellido}}</td>
+              <td>{{licAsig}}</td>
+              <td>{{gradoAsig}}</td>
+              <td>{{grupoAsig}}</td>
+              <td>{{turnoAsig}}</td>
+              <td>{{email}}</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="editar"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  data-bs-id="{{_id}}"
+                  data-bs-nombre="{{nombre}}"
+                  data-bs-apellidoP="{{primerApellido}}"
+                  data-bs-apellidoM="{{segundoApellido}}"
+                  data-bs-licAsig="{{licAsig}}"
+                  data-bs-gradoAsig="{{gradoAsig}}"
+                  data-bs-grupoAsig="{{grupoAsig}}"
+                  data-bs-turnoAsig="{{turnoAsig}}"
+                  data-bs-email="{{email}}"
+                >Editar</button>
+              </td>
+              <td>
+                <form
+                  action="/lista/Usuarios/delete/{{_id}}?_method=DELETE"
+                  method="POST"
+                >
+                  <input type="hidden" name="_method" value="DELETE" />
+                  <button class="btn btn-primary btn-block" type="submit">
+                    Eliminar
+                  </button>
+                </form>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="m-0 row justify-content-center mb-3">
+  <nav aria-label="Pagination">
+    <ul class="pagination">
+      <li class="page-item-disabled">
+        <a class="page-link">
+          <span aria-hidden="false">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a
+          class="page-link"
+          href="/lista/Usuarios/Orientadores"
+          aria-label="Next"
+        >
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="/lista/Usuarios/update" method="POST">
+        <div class="modal-header">
+          <h3 class="modal-title fs-5" id="exampleModalLabel">Editar</h3>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >x</button>
+        </div>
+        <div class="modal-body col md-12 text primary">
+          <div class="modal-id d-none">
+            <label
+              for="recipient-id "
+              class="col-form-label text-primary w-10 p-1"
+            >id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-id"
+              name="recipientId"required
+            />
+          </div>
+          <div class="modal-name">
+            <label
+              for="recipient-name"
+              class="col-form-label text-primary w-10 p-1"
+            >Nombre:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-name"
+              name="recipientName"required
+            />
+          </div>
+          <div class="modal-ape1">
+            <label
+              for="recipient-ape1"
+              class="col-form-label text-primary w-10 p-1"
+            >Apellido Paterno:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-ape1"
+              name="recipientApe1" required
+            />
+          </div>
+          <div class="modal-ape2">
+            <label
+              for="recipient-ape2"
+              class="col-form-label text-primary w-10 p-1"
+            >Apellido Materno:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-ape2"
+              name="recipientApe2"required
+            />
+          </div>
+          <div class="modal-licenciatura">
+            <label
+              for="recipient-ape2"
+              class="col-form-label text-primary w-10 p-1"
+            >Licenciatura:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-licenciatura"
+              name="recipientLicenciatura"
+            />
+          </div>
+          <div class="modal-grado">
+            <label
+              for="recipient-grado"
+              class="col-form-label text-primary w-10 p-1"
+            >Grado:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-grado"
+              name="recipientGrado"
+            />
+          </div>
+          <div class="modal-grupo">
+            <label
+              for="recipient-grupo"
+              class="col-form-label text-primary w-10 p-1"
+            >Grupo:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-grupo"
+              name="recipientGrupo"
+            />
+          </div>
+          <div class="modal-turno">
+            <label
+              for="recipient-turno"
+              class="col-form-label text-primary w-10 p-1"
+            >Turno:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-turno"
+              name="recipientTurno"
+            />
+          </div>
+          <div class="modal-correo">
+            <label
+              for="recipient-correo"
+              class="col-form-label text-primary w-10 p-1"
+            >Correo:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-correo"
+              name="recipientCorreo"
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >Close</button>
+          <button class="btn btn-primary" type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  const exampleModal = document.getElementById('exampleModal') if (exampleModal)
+  { exampleModal.addEventListener('show.bs.modal', event => { 
+  // Button that
+  triggered the modal const button = event.relatedTarget
+  // Extract info from data-bs-* attributes 
+  const recipient0 = button.getAttribute('data-bs-id')
+  const recipient = button.getAttribute('data-bs-nombre') const recipient1 =
+  button.getAttribute('data-bs-apellidoP') const recipient2 =
+  button.getAttribute('data-bs-apellidoM') const recipient3 =
+  button.getAttribute('data-bs-licAsig') const recipient4 =
+  button.getAttribute('data-bs-gradoAsig') const recipient5 =
+  button.getAttribute('data-bs-grupoAsig') const recipient6 =
+  button.getAttribute('data-bs-turnoAsig') const recipient7 =
+  button.getAttribute('data-bs-email') 
+  // Update the modal's content. const
+  modalTitle = exampleModal.querySelector('.modal-title') 
+  const modalBodyInput0 = exampleModal.querySelector('.modal-id input')
+   modalBodyInput0.value = recipient0;
+  const modalBodyInput = exampleModal.querySelector('.modal-name input') 
+    modalBodyInput.value = recipient; 
+  const modalBodyInput1 = exampleModal.querySelector('.modal-ape1 input') 
+  modalBodyInput1.value = recipient1; 
+  const modalBodyInput2 = exampleModal.querySelector('.modal-ape2 input')
+   modalBodyInput2.value = recipient2; 
+  const modalBodyInput3 = exampleModal.querySelector('.modal-licenciatura input')
+  modalBodyInput3.value = recipient3; 
+  const modalBodyInput4 = exampleModal.querySelector('.modal-grado input') 
+  modalBodyInput4.value = recipient4; 
+  const modalBodyInput5 = exampleModal.querySelector('.modal-grupo input')
+  modalBodyInput5.value = recipient5; 
+  const modalBodyInput6 = exampleModal.querySelector('.modal-turno input')
+   modalBodyInput6.value = recipient6;
+  const modalBodyInput7 = exampleModal.querySelector('.modal-correo input') 
+  modalBodyInput7.value = recipient7;
+   }) }
+</script>

@@ -1,77 +1,170 @@
-
-  <h5 class="card-title">Formato de Autorización  Tutorial/Intervención Educativa</h5>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <form action="/formato/solicitud/autorizacion/intervencion/tutorial/educativa" method="post">
-              <div class="texto-separador">Nombre del Tutor</div>
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-              </div>
-
-              <div class="form-row">
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <form
+            action="/formato/de/autorizacion/intervencion/tutorial/educativa"method="post">
+            <input id="tipoFormato" name="tipoFormato" type="hidden" value="Formato Solicitud Autorizacion de Intervencion Tutorial" />
+            <p class="texto-separador center">Formato de autorizacion de
+              intervencion tutorial educativa</p>
+            <div class="form-group">
+              <label for="nombre">Nombre del Tutor</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nomT"
+                name="nomT"
+                placeholder="Ingrese su nombre"required
+              />
+            </div>
+            <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="apellido">Primer apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingrese primer apellido">
+                <label for="pApellido">Primer apellido</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="pApellido"
+                  name="pApellido"
+                  placeholder="Ingrese primer apellido"required
+                />
               </div>
               <div class="form-group col-md-6">
                 <label for="apellido">Segundo apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingrese segundo apellido">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sApellido"
+                  name="sApellido"
+                  placeholder="Ingrese segundo apellido"required
+                />
               </div>
             </div>
-              <div class="form-group">
-                <label for="carrera">Carrera:</label>
-                <input type="text" class="form-control" id="carrera" placeholder="Ingrese la carrera">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="licenciatura">Licenciatura</label>
+                <select class="form-control" id="carrera" name="carrera">
+                  <option value="Nutricion UdeG">Nutrición UdeG</option>
+                  <option value="Psicologia">Psicología</option>
+                  <option value="Administracion de Empresas">Administración de
+                    Empresas</option>
+                  <option value="Actividad Fisica Deportiva Saludable">Actividad
+                    Física Deportiva Saludable</option>
+                  <option value="Turismo y Gestion de Proyectos">Turismo y
+                    Gestión de Proyectos</option>
+                  <option value="Arquitectura">Arquitectura</option>
+                  <option value="Ciencias de la Comunicacion">Ciencias de la
+                    Comunicación</option>
+                  <option value="Contaduria Publica">Contaduría Pública</option>
+                  <option value="Derecho">Derecho</option>
+                  <option value="Derecho Semiescolarizado">Derecho
+                    Semiescolarizado</option>
+                  <option value="Diseño para la Comunucacion Grafica">Diseño
+                    para la Comunicación Gráfica</option>
+                  <option value="Diseño Grafico y Digital">Diseño Gráfico y
+                    Digital</option>
+                  <option value="Gastronomia">Gastronomía</option>
+                  <option value="Ingenieria en Software">Ingeniería en Software</option>
+                  <option value="Mercadotecnia">Mercadotecnia</option>
+                  <option value="Negocios Internacionales">Negocios
+                    Internacionales</option>
+                  <option
+                    value="Administracion Estrategica de los Negocios"
+                  >Administración Estratégica de los Negocios</option>
+                  <option
+                    value="Mercadotecnia Estrategica Ezcolarizada"
+                  >Mercadotecnia Estratégica Escolarizada</option>
+                  <option value="Mercadotecnia Estrategica Mixta">Mercadotecnia
+                    Estratégica Mixta</option>
+                </select>
               </div>
-              <div class="form-group">
-                <label for="gradoGrupoTurno">Grado, grupo y turno:</label>
-                <input type="text" class="form-control" id="gradoGrupoTurno" placeholder="Ingrese el grado, grupo y turno">
+              <div class="form-group col-md-12">
+                <label for="necesidades">Grupo y/o Alumno al que será dirigida
+                  la intervención:</label></div>
+              <div class="form-group col-md-6">
+                <label for="grupo">Grupo</label>
+                <select class="form-control" id="grupo" name="grupo">
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                  <option value="E">E</option>
+                  <option value="F">F</option>
+                  <option value="G">G</option>
+                  <option value="H">H</option>
+                </select>
               </div>
-              <div class="form-group">
-                <label for="numAlumnos">Número de alumnos:</label>
-                <input type="number" class="form-control" id="numAlumnos" placeholder="Ingrese el número de alumnos">
+              <div class="form-group col-md-6">
+                <label for="nombre">Alumno</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nomA"
+                  name="nomA"
+                  placeholder="Nombre Completo "required
+                />
               </div>
-              <p class="texto-separador">Datos del Ponente:</p>
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-              </div>
-        
-              <div class="form-group ">
-                <label for="apellido">Primer apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingrese primer apellido">
-              </div>
-              <div class="form-group">
-                <label for="objetivo">Objetivo de la ponencia o la intervención:</label>
-                <textarea class="form-control" id="objetivo" rows="4" placeholder="Ingrese el objetivo de la ponencia o la intervención"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="necesidades">Necesidades por cubrir:</label>
-                <textarea class="form-control" id="necesidades" rows="4" placeholder="Ingrese las necesidades por cubrir"></textarea>
-              </div>
-              <p class="texto-separador">Datos del Coordinador:</p>
-              <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-              </div>
-        
-              <div class="form-group ">
-                <label for="apellido">Primer apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingrese primer apellido">
-              </div>
-
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-              </div>
-             
-            </form>
-              
-          </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="necesidades">Planteamiento de la problematica a
+                atender y descripción de la estrategia de intervencion:</label></div>
+            <p class="texto-separador"></p>
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                id="planteamientoProblem"
+                name="planteamientoProblem"
+                rows="4"
+                placeholder="Ingrese la descripcion"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="necesidades">Insumos que requerira para llevar a cabo
+                la intervencion:</label>
+              <textarea
+                class="form-control"
+                id="intervencion"
+                name="intervencion"
+                rows="4"
+                placeholder="Ingrese la descripcion"required
+              ></textarea>
+            </div>
+            <p class="texto-separador">Autorizacion:</p>
+            <div class="form-group">
+              <label for="nombre">Coordinador de Tutorías</label>
+              <input
+                type="text"
+                class="form-control"
+                id="dCordi"
+                name="dCordi"
+                placeholder="Ingrese el nombre"
+              />
+            </div>
+            <div class="form-group">
+              <label for="nombre">Coordinador de área</label>
+              <input
+                type="text"
+                class="form-control"
+                id="dCordiArea"
+                name="dCordiArea"
+                placeholder="Ingrese el nombre"required
+              />
+            </div>
+            <div class="form-group">
+              <label for="fechaIntervencion">Fecha de hoy:</label>
+              <input
+                type="date"
+                class="form-control"
+                id="fechaA"
+                name="fechaA"
+              />
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
         </div>
       </div>
-    </div><button type="submit" class="btn btn-primary">Descargar formato</button>
+    </div>
   </div>
-
+</div>
